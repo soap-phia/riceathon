@@ -145,6 +145,10 @@
     "git": "https://github.com/CattoYT/fuxuan-dots"
   },
   {
+    "name": "bean1134",
+    "distro": "fedora",
+    "git": "https://github.com/bento1134/dotfiles"
+  },{
     "name": "A Badly Drawn Wobbler",
     "distro": "nixos",
     "git": "https://github.com/suyashtnt/commafiles"
