@@ -206,7 +206,7 @@
   }, {
     "name": "ShreyShingala",
     "distro": "Mint",
-    "https://github.com/ShreyShingala/Lotr-Rice"
+    "git": "https://github.com/ShreyShingala/Lotr-Rice"
   }, {
     "name": "roxwize",
     "distro": "nixos",
