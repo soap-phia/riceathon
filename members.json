@@ -220,6 +220,10 @@
     "git": "https://git.sr.ht/~roxwize/.dotfiles"
   },
   {
+    "name": "SupremeKirb",
+    "distro": "fedora",
+    "git": "https://github.com/Supremekirb/splatdotfiles"
+  }, {
     "name": "Pegoku",
     "distro": "arch",
     "git": "https://github.com/Pegoku/dotfiles"
