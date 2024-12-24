@@ -195,6 +195,10 @@
     "git": "https://github.com/thecashmoney/dotfiles"
   },
   {
+    "name": "gbtsui",
+    "distro": "arch",
+    "git": "https://github.com/gbtsui/.config"
+  }, {
     "name": "ShreyShingala",
     "distro": "Mint",
     "https://github.com/ShreyShingala/Lotr-Rice"
