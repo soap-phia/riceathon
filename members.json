@@ -238,5 +238,10 @@
     "name": "barab",
     "distro": "arch",
     "git": "https://github.com/Baraban511/brice"
+  },
+  {
+    "name": "DaInfLoop",
+    "distro": "ubuntu",
+    "git": "https://github.com/DaInfLoop/dotfiles"
   }
 ]
