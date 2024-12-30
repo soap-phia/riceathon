@@ -243,7 +243,8 @@
     "name": "i-suck-at-most-stuff",
     "distro": "mint",
     "git": "https://github.com/i-suck-at-most-stuff/hackclub-riceathon"
-  }, {
+  },
+  {
     "name": "DaInfLoop",
     "distro": "ubuntu",
     "git": "https://github.com/DaInfLoop/dotfiles"
