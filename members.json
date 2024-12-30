@@ -1,140 +1,158 @@
-[  {
-  "name": "neongamerbot-qk",
-  "distro": "nixos",
-  "git": "https://github.com/NeonGamerBot-QK/nixos",
-  "images": ["https://github.com/NeonGamerBot-QK/nixos/blob/main/assets/screenshot.png?raw=true"]
-},
-{
-  "name": "kierans-nix",
-  "distro": "nixos",
-  "images": ["https://github.com/taciturnaxolotl/dots/raw/master/.github/images/cool-retro-term.webp"],
-  "git": "https://github.com/kcoderhtml/dots"
-},
-
-{
-  "name": "noahUglyPink",
-  "distro": "mint",
-  "git": "https://github.com/PGtheVRguy/hackClubWinter/tree/main/ricathon",
-  "images": ["https://cloud-ey9dpjgdz-hack-club-bot.vercel.app/0image.png", "https://cloud-ey9dpjgdz-hack-club-bot.vercel.app/1image.png"]
-},
-{
-  "name": "leanghok-cozy",
-  "distro": "arch",
-  "git": "https://github.com/leanghok120/Dotfiles",
-  "images": [
-    "https://cloud-dqnzmqcok-hack-club-bot.vercel.app/0image.png",
-    "https://cloud-dqnzmqcok-hack-club-bot.vercel.app/1image.png"
-  ]
-},
-{
-  "name": "askiiart",
-  "distro": "blendos",
-  "git": "https://github.com/askiiart/dotfiles",
-  "images": ["https://cloud-jspw3whtf-hack-club-bot.vercel.app/0image.png"]
-},
-{
-  "name": "pixel-city",
-  "distro": "alpine",
-  "git": "https://github.com/fluxc0/therealdots",
-  "images": ["https://cloud-m0ducctkv-hack-club-bot.vercel.app/0image.png"]
-},
-{
-  "name": "bunnyguy",
-  "distro": "pop!_os",
-  "git": "https://github.com/snipchu/dotfiles",
-  "images": ["https://cloud-hn1xbtug3-hack-club-bot.vercel.app/0image.png"]
-},
-{
-  "name": "TuinboonDev",
-  "distro": "arch",
-  "git": "https://github.com/TuinboonDev/.files",
-  "images":["https://cloud-jpr1h0bhz-hack-club-bot.vercel.app/0image.png",
-"https://cloud-jpr1h0bhz-hack-club-bot.vercel.app/1image.png",
-"https://cloud-jpr1h0bhz-hack-club-bot.vercel.app/2image.png"]
-},
-{
-  "name": "cyao",
-  "distro": "arch",
-  "git": "https://github.com/cheyao/hyprland",
-  "images":["https://cloud-ogq6nv9gp-hack-club-bot.vercel.app/0image.png"]
-},
-{
-  "name": "firepup650",
-  "distro": "debian",
-  "git": "https://git.h.hackclub.app/Firepup650/dotfiles",
-  "images": ["https://cloud-98o0ryrq6-hack-club-bot.vercel.app/0image.png"]
-},
-{
-  "name": "TheTridentGuy",
-  "distro": "raspbian",
-  "git": "https://github.com/TheTridentGuy/RaspbianRice/",
-  "images": ["https://cloud-6cvn3arqd-hack-club-bot.vercel.app/0image.png"]
-},
-{
-  "name": "neonrowan",
-  "distro": "fedora",
-  "images": ["https://cloud-hg8xycs7e-hack-club-bot.vercel.app/0image.png", "https://cloud-hg8xycs7e-hack-club-bot.vercel.app/1image.png"],
-  "git": "https://github.com/GearBoxFox/dotfiles"
-},
-{
-  "name": "StatusCritical",
-  "distro": "arch",
-  "git": "https://github.com/StatusCritical/.config",
-  "images": ["https://cloud-424yluwn3-hack-club-bot.vercel.app/0image.png"]
-},
-{
-  "name": "xriiitox",
-  "distro": "endeavouros",
-  "git": "https://github.com/xriiitox/dwm",
-  "images": ["https://cloud-e5x0mhp4x-hack-club-bot.vercel.app/0image.png", "https://cloud-e5x0mhp4x-hack-club-bot.vercel.app/1image.png"]
-},
-{
-  "name": "iris",
-  "distro": "endeavouros",
-  "git": "https://github.com/Iris-TheRainbow/dotfiles",
-  "images": ["https://cloud-1y06bt1ft-hack-club-bot.vercel.app/0image.png", "https://cloud-1y06bt1ft-hack-club-bot.vercel.app/1image.png"]
-},
-{
-  "name": "CyrilSLi",
-  "distro": "fedora",
-  "git": "https://github.com/CyrilSLi/linux-scripts",
-  "images": ["https://cloud-ox6s9g2ua-hack-club-bot.vercel.app/0image.png"]
-},
-{
-  "name": "BeachBunnyTheme",
-  "distro": "mint",
-  "git": "https://github.com/BoomBoomMushroom/DillionRice-LinuxMint",
-  "images": ["https://cloud-n2wham92j-hack-club-bot.vercel.app/0image.png"]
-},
-{
-  "name": "Volkov",
-  "distro": "arch",
-  "git": "https://github.com/Volkov08/firstricedots",
-  "images": ["https://cloud-nnam2wxy8-hack-club-bot.vercel.app/0image.png"]
-},
-{
-  "name": "Mei Misaki My Beloved",
-  "distro": "arch",
-  "git": "https://github.com/Circuitbreaker08/Mei-Misaki-My-Beloved",
-  "images": [
-    "https://cloud-ez05y2vf3-hack-club-bot.vercel.app/0image.png",
-    "https://cloud-ez05y2vf3-hack-club-bot.vercel.app/1image.png",
-    "https://cloud-ez05y2vf3-hack-club-bot.vercel.app/2image.png",
-    "https://cloud-ez05y2vf3-hack-club-bot.vercel.app/3image.png"
-  ]
-},
-{
-  "name": "Nooz",
-  "distro": "mint",
-  "git": "https://github.com/NoozAbooz/dotfiles",
-  "images": ["https://cloud-htjirvm6s-hack-club-bot.vercel.app/0image.png"]
-},
-{
-  "name": "Cyclic",
-  "distro": "arch",
-  "git": "https://github.com/Cyclic007/Arch-Rice/tree/main",
-  "images": ["https://cloud-kn7c366li-hack-club-bot.vercel.app/0image.png"]
-},
+[
+  {
+    "name": "neongamerbot-qk",
+    "distro": "nixos",
+    "git": "https://github.com/NeonGamerBot-QK/nixos",
+    "images": [
+      "https://github.com/NeonGamerBot-QK/nixos/blob/main/assets/screenshot.png?raw=true"
+    ]
+  },
+  {
+    "name": "kierans-nix",
+    "distro": "nixos",
+    "images": [
+      "https://github.com/taciturnaxolotl/dots/raw/master/.github/images/cool-retro-term.webp"
+    ],
+    "git": "https://github.com/kcoderhtml/dots"
+  },
+  {
+    "name": "noahUglyPink",
+    "distro": "mint",
+    "git": "https://github.com/PGtheVRguy/hackClubWinter/tree/main/ricathon",
+    "images": [
+      "https://cloud-ey9dpjgdz-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-ey9dpjgdz-hack-club-bot.vercel.app/1image.png"
+    ]
+  },
+  {
+    "name": "leanghok-cozy",
+    "distro": "arch",
+    "git": "https://github.com/leanghok120/Dotfiles",
+    "images": [
+      "https://cloud-dqnzmqcok-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-dqnzmqcok-hack-club-bot.vercel.app/1image.png"
+    ]
+  },
+  {
+    "name": "askiiart",
+    "distro": "blendos",
+    "git": "https://github.com/askiiart/dotfiles",
+    "images": ["https://cloud-jspw3whtf-hack-club-bot.vercel.app/0image.png"]
+  },
+  {
+    "name": "pixel-city",
+    "distro": "alpine",
+    "git": "https://github.com/fluxc0/therealdots",
+    "images": ["https://cloud-m0ducctkv-hack-club-bot.vercel.app/0image.png"]
+  },
+  {
+    "name": "bunnyguy",
+    "distro": "pop!_os",
+    "git": "https://github.com/snipchu/dotfiles",
+    "images": ["https://cloud-hn1xbtug3-hack-club-bot.vercel.app/0image.png"]
+  },
+  {
+    "name": "TuinboonDev",
+    "distro": "arch",
+    "git": "https://github.com/TuinboonDev/.files",
+    "images": [
+      "https://cloud-jpr1h0bhz-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-jpr1h0bhz-hack-club-bot.vercel.app/1image.png",
+      "https://cloud-jpr1h0bhz-hack-club-bot.vercel.app/2image.png"
+    ]
+  },
+  {
+    "name": "cyao",
+    "distro": "arch",
+    "git": "https://github.com/cheyao/hyprland",
+    "images": ["https://cloud-ogq6nv9gp-hack-club-bot.vercel.app/0image.png"]
+  },
+  {
+    "name": "firepup650",
+    "distro": "debian",
+    "git": "https://git.h.hackclub.app/Firepup650/dotfiles",
+    "images": ["https://cloud-98o0ryrq6-hack-club-bot.vercel.app/0image.png"]
+  },
+  {
+    "name": "TheTridentGuy",
+    "distro": "raspbian",
+    "git": "https://github.com/TheTridentGuy/RaspbianRice/",
+    "images": ["https://cloud-6cvn3arqd-hack-club-bot.vercel.app/0image.png"]
+  },
+  {
+    "name": "neonrowan",
+    "distro": "fedora",
+    "images": [
+      "https://cloud-hg8xycs7e-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-hg8xycs7e-hack-club-bot.vercel.app/1image.png"
+    ],
+    "git": "https://github.com/GearBoxFox/dotfiles"
+  },
+  {
+    "name": "StatusCritical",
+    "distro": "arch",
+    "git": "https://github.com/StatusCritical/.config",
+    "images": ["https://cloud-424yluwn3-hack-club-bot.vercel.app/0image.png"]
+  },
+  {
+    "name": "xriiitox",
+    "distro": "endeavouros",
+    "git": "https://github.com/xriiitox/dwm",
+    "images": [
+      "https://cloud-e5x0mhp4x-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-e5x0mhp4x-hack-club-bot.vercel.app/1image.png"
+    ]
+  },
+  {
+    "name": "iris",
+    "distro": "endeavouros",
+    "git": "https://github.com/Iris-TheRainbow/dotfiles",
+    "images": [
+      "https://cloud-1y06bt1ft-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-1y06bt1ft-hack-club-bot.vercel.app/1image.png"
+    ]
+  },
+  {
+    "name": "CyrilSLi",
+    "distro": "fedora",
+    "git": "https://github.com/CyrilSLi/linux-scripts",
+    "images": ["https://cloud-ox6s9g2ua-hack-club-bot.vercel.app/0image.png"]
+  },
+  {
+    "name": "BeachBunnyTheme",
+    "distro": "mint",
+    "git": "https://github.com/BoomBoomMushroom/DillionRice-LinuxMint",
+    "images": ["https://cloud-n2wham92j-hack-club-bot.vercel.app/0image.png"]
+  },
+  {
+    "name": "Volkov",
+    "distro": "arch",
+    "git": "https://github.com/Volkov08/firstricedots",
+    "images": ["https://cloud-nnam2wxy8-hack-club-bot.vercel.app/0image.png"]
+  },
+  {
+    "name": "Mei Misaki My Beloved",
+    "distro": "arch",
+    "git": "https://github.com/Circuitbreaker08/Mei-Misaki-My-Beloved",
+    "images": [
+      "https://cloud-ez05y2vf3-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-ez05y2vf3-hack-club-bot.vercel.app/1image.png",
+      "https://cloud-ez05y2vf3-hack-club-bot.vercel.app/2image.png",
+      "https://cloud-ez05y2vf3-hack-club-bot.vercel.app/3image.png"
+    ]
+  },
+  {
+    "name": "Nooz",
+    "distro": "mint",
+    "git": "https://github.com/NoozAbooz/dotfiles",
+    "images": ["https://cloud-htjirvm6s-hack-club-bot.vercel.app/0image.png"]
+  },
+  {
+    "name": "Cyclic",
+    "distro": "arch",
+    "git": "https://github.com/Cyclic007/Arch-Rice/tree/main",
+    "images": ["https://cloud-kn7c366li-hack-club-bot.vercel.app/0image.png"]
+  },
   {
     "name": "ILikeMice",
     "distro": "arch",
@@ -151,15 +169,20 @@
     "name": "Dragon863",
     "distro": "debian",
     "git": "https://github.com/Dragon863/i3-rice",
-    "images": ["https://cloud-74lwimft1-hack-club-bot.vercel.app/0image.png", "https://cloud-74lwimft1-hack-club-bot.vercel.app/1image.png"]
+    "images": [
+      "https://cloud-74lwimft1-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-74lwimft1-hack-club-bot.vercel.app/1image.png"
+    ]
   },
   {
     "name": "swarsin",
     "distro": "arch",
     "git": "https://github.com/Swarsin/dotfiles",
-    "images":["https://cloud-kedy2hpl2-hack-club-bot.vercel.app/0image.png",
-  "https://cloud-3u59z9qme-hack-club-bot.vercel.app/0image.png",
-"https://cloud-3u59z9qme-hack-club-bot.vercel.app/1image.png"]
+    "images": [
+      "https://cloud-kedy2hpl2-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-3u59z9qme-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-3u59z9qme-hack-club-bot.vercel.app/1image.png"
+    ]
   },
   {
     "name": "leahcodes101",
@@ -171,13 +194,22 @@
     "name": "headblockhead",
     "distro": "nixos",
     "git": "https://github.com/headblockhead/dotfiles",
-    "images": ["https://cloud-94styr2fd-hack-club-bot.vercel.app/0image.png", "https://cloud-94styr2fd-hack-club-bot.vercel.app/1image.png", "https://cloud-94styr2fd-hack-club-bot.vercel.app/2image.png"]
+    "images": [
+      "https://cloud-94styr2fd-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-94styr2fd-hack-club-bot.vercel.app/1image.png",
+      "https://cloud-94styr2fd-hack-club-bot.vercel.app/2image.png"
+    ]
   },
   {
     "name": "3XAY",
     "distro": "Kubuntu",
     "git": "https://github.com/3XAY/tree/3xay/",
-    "images": ["https://cloud-q4la5p0si-hack-club-bot.vercel.app/0image.png", "https://cloud-q4la5p0si-hack-club-bot.vercel.app/1image.png", "https://cloud-q4la5p0si-hack-club-bot.vercel.app/2image.png", "https://cloud-61b3wmj3h-hack-club-bot.vercel.app/0image.png"]
+    "images": [
+      "https://cloud-q4la5p0si-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-q4la5p0si-hack-club-bot.vercel.app/1image.png",
+      "https://cloud-q4la5p0si-hack-club-bot.vercel.app/2image.png",
+      "https://cloud-61b3wmj3h-hack-club-bot.vercel.app/0image.png"
+    ]
   },
 
   {
@@ -203,31 +235,49 @@
     "name": "A Badly Drawn Wobbler",
     "distro": "nixos",
     "git": "https://github.com/Suya1671/commafiles",
-    "images": ["https://cloud-32yctuybq-hack-club-bot.vercel.app/0image.png", "https://cloud-32yctuybq-hack-club-bot.vercel.app/1image.png"]
+    "images": [
+      "https://cloud-32yctuybq-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-32yctuybq-hack-club-bot.vercel.app/1image.png"
+    ]
   },
   {
     "name": "sophia0805",
     "distro": "ubuntu",
     "git": "https://github.com/sophia0805/linux-rice",
-    "images": ["https://cloud-5otb0ulut-hack-club-bot.vercel.app/0image.png", "https://cloud-5otb0ulut-hack-club-bot.vercel.app/1image.png"]
+    "images": [
+      "https://cloud-5otb0ulut-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-5otb0ulut-hack-club-bot.vercel.app/1image.png"
+    ]
   },
   {
     "name": "udontur",
     "distro": "arch",
     "git": "https://github.com/udontur/hyprland",
-    "images": ["https://cloud-mm8opqid0-hack-club-bot.vercel.app/0image.png", "https://cloud-mm8opqid0-hack-club-bot.vercel.app/1image.png"]
+    "images": [
+      "https://cloud-mm8opqid0-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-mm8opqid0-hack-club-bot.vercel.app/1image.png"
+    ]
   },
   {
     "name": "ComputingSquid",
     "distro": "ubuntu",
     "git": "https://github.com/ProbablyComputingSquid/plasmaconfig",
-    "images": ["https://cloud-pv6qcythp-hack-club-bot.vercel.app/0image.png", "https://cloud-pv6qcythp-hack-club-bot.vercel.app/1image.png", "https://cloud-pv6qcythp-hack-club-bot.vercel.app/2image.png"]
+    "images": [
+      "https://cloud-pv6qcythp-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-pv6qcythp-hack-club-bot.vercel.app/1image.png",
+      "https://cloud-pv6qcythp-hack-club-bot.vercel.app/2image.png"
+    ]
   },
   {
     "name": "ShibamRoy9826",
     "distro": "arch",
     "git": "https://github.com/ShibamRoy9826/qt_tile",
-    "images": ["https://cloud-9jpla7zxu-hack-club-bot.vercel.app/0image.png", "https://cloud-9jpla7zxu-hack-club-bot.vercel.app/1image.png", "https://cloud-9jpla7zxu-hack-club-bot.vercel.app/2image.png", "https://cloud-9jpla7zxu-hack-club-bot.vercel.app/3image.png"]
+    "images": [
+      "https://cloud-9jpla7zxu-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-9jpla7zxu-hack-club-bot.vercel.app/1image.png",
+      "https://cloud-9jpla7zxu-hack-club-bot.vercel.app/2image.png",
+      "https://cloud-9jpla7zxu-hack-club-bot.vercel.app/3image.png"
+    ]
   },
   {
     "name": "UnnaturalTwilight",
@@ -245,67 +295,95 @@
     "name": "thecashmoney",
     "distro": "arch",
     "git": "https://github.com/thecashmoney/dotfiles",
-    "images": ["https://cloud-kq0awumuw-hack-club-bot.vercel.app/0image.png", "https://cloud-kq0awumuw-hack-club-bot.vercel.app/1image.png", "https://cloud-kq0awumuw-hack-club-bot.vercel.app/2image.png", "https://cloud-kq0awumuw-hack-club-bot.vercel.app/3image.png"]
+    "images": [
+      "https://cloud-kq0awumuw-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-kq0awumuw-hack-club-bot.vercel.app/1image.png",
+      "https://cloud-kq0awumuw-hack-club-bot.vercel.app/2image.png",
+      "https://cloud-kq0awumuw-hack-club-bot.vercel.app/3image.png"
+    ]
   },
   {
     "name": "mzums",
     "distro": "endeavouros",
     "git": "https://github.com/mzums/arch-i3wm-rice",
-    "images": ["https://cloud-o5wgyd2ef-hack-club-bot.vercel.app/0image.png", "https://cloud-o5wgyd2ef-hack-club-bot.vercel.app/1image.png"]
+    "images": [
+      "https://cloud-o5wgyd2ef-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-o5wgyd2ef-hack-club-bot.vercel.app/1image.png"
+    ]
   },
   {
     "name": "gbtsui",
     "distro": "arch",
     "git": "https://github.com/gbtsui/.config",
-    "images":["https://cloud-qwc8hjjkf-hack-club-bot.vercel.app/0image.png"]
+    "images": ["https://cloud-qwc8hjjkf-hack-club-bot.vercel.app/0image.png"]
   },
   {
     "name": "PonderSlime",
     "distro": "mint",
     "git": "https://github.com/PonderSlime/Norse---Linux-Mint-Rice/",
-    "images": ["https://cloud-lpjdne6fw-hack-club-bot.vercel.app/0image.png", "https://cloud-lpjdne6fw-hack-club-bot.vercel.app/1image.png"]
+    "images": [
+      "https://cloud-lpjdne6fw-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-lpjdne6fw-hack-club-bot.vercel.app/1image.png"
+    ]
   },
   {
     "name": "roxwize",
     "distro": "nixos",
     "git": "https://git.sr.ht/~roxwize/.dotfiles",
-    "images": ["https://cloud-fgqhhaly0-hack-club-bot.vercel.app/0image.png", "https://cloud-fgqhhaly0-hack-club-bot.vercel.app/1image.png", "https://cloud-fgqhhaly0-hack-club-bot.vercel.app/2image.png"]
+    "images": [
+      "https://cloud-fgqhhaly0-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-fgqhhaly0-hack-club-bot.vercel.app/1image.png",
+      "https://cloud-fgqhhaly0-hack-club-bot.vercel.app/2image.png"
+    ]
   },
   {
     "name": "ShreyShingala",
     "distro": "mint",
     "git": "https://github.com/ShreyShingala/Lotr-Rice",
-    "images":["https://cloud-d22qmkt0p-hack-club-bot.vercel.app/0image.png"]
+    "images": ["https://cloud-d22qmkt0p-hack-club-bot.vercel.app/0image.png"]
   },
   {
     "name": "SupremeKirb",
     "distro": "fedora",
     "git": "https://github.com/Supremekirb/splatdotfiles",
-    "images":["https://cloud-cl1jqmixv-hack-club-bot.vercel.app/0image.png", "https://cloud-cl1jqmixv-hack-club-bot.vercel.app/1image.png"]
+    "images": [
+      "https://cloud-cl1jqmixv-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-cl1jqmixv-hack-club-bot.vercel.app/1image.png"
+    ]
   },
   {
     "name": "Hibernathan1212",
     "distro": "fedora",
     "git": "https://github.com/Hibernathan1212/dotfiles",
-    "images": ["https://cloud-5jfwfkd0f-hack-club-bot.vercel.app/0image.png", "https://cloud-5jfwfkd0f-hack-club-bot.vercel.app/1image.png", "https://cloud-5jfwfkd0f-hack-club-bot.vercel.app/2image.png"]
+    "images": [
+      "https://cloud-5jfwfkd0f-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-5jfwfkd0f-hack-club-bot.vercel.app/1image.png",
+      "https://cloud-5jfwfkd0f-hack-club-bot.vercel.app/2image.png"
+    ]
   },
   {
     "name": "Pegoku",
     "distro": "arch",
     "git": "https://github.com/Pegoku/dotfiles",
-    "images": ["https://cloud-r9s07p01n-hack-club-bot.vercel.app/0image.png", "https://cloud-r9s07p01n-hack-club-bot.vercel.app/1image.png"]
+    "images": [
+      "https://cloud-r9s07p01n-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-r9s07p01n-hack-club-bot.vercel.app/1image.png"
+    ]
   },
   {
     "name": "nulladmin1",
     "distro": "nixos",
     "git": "https://github.com/nulladmin1/nixos-config",
-    "images": ["https://cloud-botl45src-hack-club-bot.vercel.app/0image.png", "https://cloud-botl45src-hack-club-bot.vercel.app/1image.png"]
+    "images": [
+      "https://cloud-botl45src-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-botl45src-hack-club-bot.vercel.app/1image.png"
+    ]
   },
   {
     "name": "barab",
     "distro": "arch",
     "git": "https://github.com/Baraban511/brice",
-    "images":[] 
+    "images": []
   },
   {
     "name": "DaInfLoop",
