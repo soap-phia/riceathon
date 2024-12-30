@@ -230,6 +230,10 @@
     "git": "https://github.com/Pegoku/dotfiles"
   },
   {
+    "name": "nulladmin1",
+    "distro": "nixos",
+    "git": "https://github.com/nulladmin1/nixos-config"
+  }, {
     "name": "Hibernathan1212",
     "distro": "fedora",
     "git": "https://github.com/Hibernathan1212/dotfiles"
