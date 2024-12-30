@@ -33,4 +33,3 @@
 - [ ] i have my screenshot images in the json file (urls please).
 - [ ] i have my hackatime badge
 - - if you have errors finding it please put your slack ID instead!!
-
