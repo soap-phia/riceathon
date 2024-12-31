@@ -22,7 +22,14 @@
     .col {
       flex: 1;
       margin: 10px;
+      animation-duration: 250ms;
+      transition-duration: 250ms;
+      transform: scale(1);
     }
+    .col:hover {
+      transform: scale(1.05);
+    }
+
   </style>
 </head>
 
@@ -75,6 +82,7 @@ for(const group of grouped) {
     const h1 = document.createElement('h1')
     // h1.append(setupIcon(cold.distro))
     h1.innerText = cold.name
+    h1.style.paddingBottom = "10px"
     col.appendChild(h1)
     col.appendChild(img)
     row.appendChild(col)
