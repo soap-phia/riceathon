@@ -12,6 +12,18 @@
   <meta name="description" content="Gallery of the rice's " />
   <meta property="og:description" content="Gallery of the rice's" />
   <meta name="twitter:description" content="Gallery of the rice's" />
+<link rel="stylesheet" href="carousel.css">
+  <style>
+    .row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .col {
+      flex: 1;
+      margin: 10px;
+    }
+  </style>
 </head>
 
 <body>
@@ -23,9 +35,118 @@
 
   <header>
     <h1 class="ultratitle">Gallery</h1>
-    <p class="headline">to be done later. (specifc: after i do the jam)</p>
+    <p class="headline" id="headline">Gallery of the {count} rice's</p>
   </header>
-
+<div id="gallery"></div>
 </body>
+<script src="carousel.js"></script>
+<script src="icon.js"></script>
+<script>
+  function groupArray(arr, size = 3) {
+    const groups = []
+    for (let i = 0; i < arr.length; i += size) {
+      groups.push(arr.slice(i, i + size))
+    }
+    return groups
+  }
+  async function mainIfHome() {
+    console.log(1)
+    const gallery = await fetch(
+      "https://raw.githubusercontent.com/hackclub/riceathon/refs/heads/main/members.json"
+    ).then(r=>r.json())
+    document.getElementById('headline').innerText = `Gallery of the ${gallery.length + 1} rice's`
+  // console.log(groupArray(gallery), 0)
+const grouped = groupArray(gallery)
+let index = 0;
+for(const group of grouped) {
+  const row=document.createElement('div')
+  row.classList.add('row')
+  for(const cold of group) {
+    const col=document.createElement('a')
+    col.classList.add('card')
+    col.classList.add('col')
+    col.href = `#${index}`
+    const img = document.createElement('img')
+    // lazy load
+    img.setAttribute('loading', 'lazy')
+    img.src = cold.images[0]
+    img.alt = cold.name
+    img.style.width = "90%"
+    img.style.height = "90%"
+    img.style.borderRadius = "10px"
+    const h1 = document.createElement('h1')
+    // h1.append(setupIcon(cold.distro))
+    h1.innerText = cold.name
+    col.appendChild(h1)
+    col.appendChild(img)
+    row.appendChild(col)
+  index++
+  }
 
+  document.getElementById('gallery').appendChild(row)
+  }
+}
+async function mainIfViewIndex() {
+  const index = parseInt(window.location.hash.slice(1))
+  const data = await fetch(
+    `https://raw.githubusercontent.com/hackclub/riceathon/refs/heads/main/members.json`
+  ).then(r=>r.json()).then(r=>r[index])
+  if(!data) window.location.hash = ''
+  console.log(data)
+  const carousel = document.createElement('div')
+  carousel.classList.add('carousel-container')
+  const imgCarousel = document.createElement('div')
+  imgCarousel.classList.add('carousel')
+  for(const image of data.images) {
+    const img = document.createElement('img')
+    img.src = image
+    img.alt = data.name
+    img.style.width = "100%"
+    img.style.height = "auto"
+    imgCarousel.appendChild(img)
+  }
+  carousel.appendChild(imgCarousel)
+  const next = document.createElement('button')
+  next.classList.add('next')
+  next.innerText = 'Next'
+  const prev = document.createElement('button')
+  prev.classList.add('prev')
+  prev.innerText = 'Prev'
+  if(data.images.length > 1){
+    carousel.appendChild(next)
+    carousel.appendChild(prev)
+  }
+  const titleThing = document.createElement('h1')
+  titleThing.innerText = data.name
+  const h1 = titleThing
+  h1.style.textAlign = "center"
+    // h1.style.margin = "auto"
+    const gitLink = document.createElement('a')
+    gitLink.href = data.git
+    gitLink.innerText = "Dotfiles"
+    gitLink.style.textDecoration = "none"
+    gitLink.target = "_blank"
+    h1.appendChild(document.createTextNode(" - "))
+    h1.appendChild(gitLink)
+    h1.appendChild(document.createTextNode(" "))
+    h1.appendChild(setupIcon(data.distro))
+    document.body.appendChild(titleThing)
+  document.body.appendChild(carousel)
+const acarousel = setupCarousel()
+  next.onclick = () => acarousel.moveSlide(1)
+  prev.onclick = () => acarousel.moveSlide(-1)
+}
+
+  window.addEventListener('hashchange', () => location.reload())
+  if(isNaN(window.location.hash.slice(1)) || window.location.hash == "#" || window.location.hash == "") {
+    console.log(`Loading main`)
+    mainIfHome()
+
+  } else {
+    console.log(`#${window.location.hash.slice(1)}`)
+    document.getElementById('headline').remove()
+    mainIfViewIndex()
+  }
+
+</script>
 </html>
