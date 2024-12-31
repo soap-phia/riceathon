@@ -54,7 +54,7 @@
     const gallery = await fetch(
       "https://raw.githubusercontent.com/hackclub/riceathon/refs/heads/main/members.json"
     ).then(r=>r.json())
-    document.getElementById('headline').innerText = `Gallery of the ${gallery.length + 1} rice's`
+    document.getElementById('headline').innerText = `Gallery of the ${gallery.length} rices`
   // console.log(groupArray(gallery), 0)
 const grouped = groupArray(gallery)
 let index = 0;
