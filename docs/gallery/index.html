@@ -49,11 +49,9 @@
     }
     return groups
   }
-  async function mainIfHome() {
+  async function mainIfHome(gallery) {
     console.log(1)
-    const gallery = await fetch(
-      "https://raw.githubusercontent.com/hackclub/riceathon/refs/heads/main/members.json"
-    ).then(r=>r.json())
+   
     document.getElementById('headline').innerText = `Gallery of the ${gallery.length} rices`
   // console.log(groupArray(gallery), 0)
 const grouped = groupArray(gallery)
@@ -86,11 +84,9 @@ for(const group of grouped) {
   document.getElementById('gallery').appendChild(row)
   }
 }
-async function mainIfViewIndex() {
+async function mainIfViewIndex(gallery) {
   const index = parseInt(window.location.hash.slice(1))
-  const data = await fetch(
-    `https://raw.githubusercontent.com/hackclub/riceathon/refs/heads/main/members.json`
-  ).then(r=>r.json()).then(r=>r[index])
+  const data =gallery[index]
   if(!data) window.location.hash = ''
   console.log(data)
   const carousel = document.createElement('div')
@@ -137,16 +133,21 @@ const acarousel = setupCarousel()
   prev.onclick = () => acarousel.moveSlide(-1)
 }
 
-  window.addEventListener('hashchange', () => location.reload())
-  if(isNaN(window.location.hash.slice(1)) || window.location.hash == "#" || window.location.hash == "") {
+  async function main() {
+    const gallery = await fetch(
+      "https://raw.githubusercontent.com/hackclub/riceathon/refs/heads/main/members.json"
+    ).then(r=>r.json())
+    if(isNaN(window.location.hash.slice(1)) || window.location.hash == "#" || window.location.hash == "") {
     console.log(`Loading main`)
-    mainIfHome()
-
+    mainIfHome(gallery)
   } else {
     console.log(`#${window.location.hash.slice(1)}`)
     document.getElementById('headline').remove()
-    mainIfViewIndex()
+    mainIfViewIndex(gallery)
   }
+  window.addEventListener('hashchange', () => location.reload())
+  }
+main()
 
 </script>
 </html>
