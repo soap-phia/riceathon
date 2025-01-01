@@ -119,21 +119,25 @@ async function mainIfViewIndex(gallery) {
     carousel.appendChild(prev)
     carousel.appendChild(next)
   }
-  const titleThing = document.createElement('h1')
+  const titleThing = document.createElement('div')
   titleThing.innerText = data.name
-  const h1 = titleThing
-  h1.style.textAlign = "center"
-    // h1.style.margin = "auto"
-    const gitLink = document.createElement('a')
-    gitLink.href = data.git
-    gitLink.innerText = "Dotfiles"
-    gitLink.style.textDecoration = "none"
-    gitLink.target = "_blank"
-    h1.style.verticalAlign = "center"
-    h1.appendChild(document.createTextNode(" - "))
-    h1.appendChild(gitLink)
-    h1.appendChild(document.createTextNode(" "))
-    h1.appendChild(setupIcon(data.distro))
+  const div = titleThing
+  div.style.display = "flex"
+  div.style.justifyContent = "center"
+  div.style.alignItems = "center"
+  div.style.gap = "var(--spacing-2)"
+  div.style.fontSize = "var(--font-5)"
+  div.style.fontWeight = "var(--font-weight-bold)"
+  
+  const gitLink = document.createElement('a')
+  gitLink.href = data.git
+  gitLink.innerText = "Dotfiles"
+  gitLink.style.textDecoration = "none"
+  gitLink.target = "_blank"
+  
+    div.appendChild(document.createTextNode(" - "))
+    div.appendChild(gitLink)
+    div.appendChild(setupIcon(data.distro))
     document.body.appendChild(titleThing)
   document.body.appendChild(carousel)
 const acarousel = setupCarousel()
