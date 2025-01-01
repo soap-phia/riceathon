@@ -32,7 +32,6 @@
 
   </style>
 </head>
-
 <body>
   <!-- Delete this HTML and replace with your own HTML -->
   <!-- starter code below -->
@@ -112,13 +111,13 @@ async function mainIfViewIndex(gallery) {
   carousel.appendChild(imgCarousel)
   const next = document.createElement('button')
   next.classList.add('next')
-  next.innerText = 'Next'
+  next.innerText = 'Next Image'
   const prev = document.createElement('button')
   prev.classList.add('prev')
-  prev.innerText = 'Prev'
+  prev.innerText = 'Prev Image'
   if(data.images.length > 1){
-    carousel.appendChild(next)
     carousel.appendChild(prev)
+    carousel.appendChild(next)
   }
   const titleThing = document.createElement('h1')
   titleThing.innerText = data.name
@@ -130,6 +129,7 @@ async function mainIfViewIndex(gallery) {
     gitLink.innerText = "Dotfiles"
     gitLink.style.textDecoration = "none"
     gitLink.target = "_blank"
+    h1.style.verticalAlign = "center"
     h1.appendChild(document.createTextNode(" - "))
     h1.appendChild(gitLink)
     h1.appendChild(document.createTextNode(" "))
@@ -156,6 +156,5 @@ const acarousel = setupCarousel()
   window.addEventListener('hashchange', () => location.reload())
   }
 main()
-
 </script>
 </html>

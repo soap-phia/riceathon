@@ -3,7 +3,7 @@ function setupIcon(iconf, el) {
   icon.src = "./icons/" + iconf + ".png";
   // icon.width = "20px"
   // icon.height = "20px"
-  icon.style.width = "40px";
+  // icon.style.width = "40px";
   icon.style.height = "40px";
   return el ? el.appendChild(icon) : icon;
 }
