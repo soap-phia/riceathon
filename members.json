@@ -1,5 +1,13 @@
 [
   {
+    "name": "ilwan",
+    "distro": "arch",
+    "git": "https://github.com/IGaming73/ArchRice",
+    "images": [
+      "https://github.com/IGaming73/ArchRice/blob/main/screenshots/terminals.png?raw=true"
+    ]
+  },
+  {
     "name": "neongamerbot-qk",
     "distro": "nixos",
     "git": "https://github.com/NeonGamerBot-QK/nixos",
