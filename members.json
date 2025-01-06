@@ -8,15 +8,6 @@
     ]
   },
   {
-    "name": "WhatWare WestonLite",
-    "distro": "fedora",
-    "git": "https://github.com/whatwareweb/WestonLite",
-    "images": [
-      "https://github.com/whatwareweb/WestonLite/blob/main/Screenshots/Screenshot0.png?raw=true",
-      "https://github.com/whatwareweb/WestonLite/blob/main/Screenshots/Screenshot1.png?raw=true"
-    ]
-  },
-  {
     "name": "kierans-nix",
     "distro": "nixos",
     "images": [
@@ -452,6 +443,15 @@
     "images": [
       "https://cloud-j61adq7yu-hack-club-bot.vercel.app/0image.png",
       "https://cloud-btrl1ldyf-hack-club-bot.vercel.app/0image.png"
+    ]
+  },
+  {
+    "name": "WhatWare WestonLite",
+    "distro": "fedora",
+    "git": "https://github.com/whatwareweb/WestonLite",
+    "images": [
+      "https://github.com/whatwareweb/WestonLite/blob/main/Screenshots/Screenshot0.png?raw=true",
+      "https://github.com/whatwareweb/WestonLite/blob/main/Screenshots/Screenshot1.png?raw=true"
     ]
   }
 ]
