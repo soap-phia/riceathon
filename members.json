@@ -444,5 +444,14 @@
       "https://cloud-j61adq7yu-hack-club-bot.vercel.app/0image.png",
       "https://cloud-btrl1ldyf-hack-club-bot.vercel.app/0image.png"
     ]
+  },
+  {
+    "name": "Iviv122",
+    "distro": "arch",
+    "git": "https://github.com/Iviv122/configArch",
+    "images":[
+      "https://cloud-md6v75k99-hack-club-bot.vercel.app/120250106_16h57m45s_grim.png",
+      "https://cloud-md6v75k99-hack-club-bot.vercel.app/020250106_16h58m00s_grim.png"
+    ]
   }
 ]
