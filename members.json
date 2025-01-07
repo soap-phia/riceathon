@@ -470,4 +470,14 @@
       "https://cloud-md6v75k99-hack-club-bot.vercel.app/120250106_16h57m45s_grim.png",
       "https://cloud-md6v75k99-hack-club-bot.vercel.app/020250106_16h58m00s_grim.png"
     ]
+  },
+  {
+    "name": "kazuala",
+    "distro": "arch",
+    "git": "https://github.com/Kazuala/arch-linux-hyprland-rice",
+    "images": [
+      "https://github.com/Kazuala/arch-linux-hyprland-rice/blob/main/screenshots/2025-01-07-085101_hyprshot.png",
+      "https://github.com/Kazuala/arch-linux-hyprland-rice/blob/main/screenshots/2025-01-07-085132_hyprshot.png",
+      "https://github.com/Kazuala/arch-linux-hyprland-rice/blob/main/screenshots/2025-01-07-085146_hyprshot.png"
+    ]
   }
