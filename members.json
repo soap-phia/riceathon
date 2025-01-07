@@ -444,5 +444,15 @@
       "https://cloud-j61adq7yu-hack-club-bot.vercel.app/0image.png",
       "https://cloud-btrl1ldyf-hack-club-bot.vercel.app/0image.png"
     ]
+  },
+  {
+    "name": "kazuala",
+    "distro": "arch",
+    "git": "https://github.com/Kazuala/arch-linux-hyprland-rice",
+    "images": [
+      "https://github.com/Kazuala/arch-linux-hyprland-rice/blob/main/screenshots/2025-01-07-085101_hyprshot.png",
+      "https://github.com/Kazuala/arch-linux-hyprland-rice/blob/main/screenshots/2025-01-07-085132_hyprshot.png",
+      "https://github.com/Kazuala/arch-linux-hyprland-rice/blob/main/screenshots/2025-01-07-085146_hyprshot.png"
+    ]
   }
 ]
