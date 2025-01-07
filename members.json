@@ -446,6 +446,14 @@
     ]
   },
   {
+    "name": "ilwan",
+    "distro": "arch",
+    "git": "https://github.com/IGaming73/ArchRice",
+    "images": [
+      "https://github.com/IGaming73/ArchRice/blob/main/screenshots/terminals.png"
+    ]
+  },
+  {
     "name": "WhatWare WestonLite",
     "distro": "fedora",
     "git": "https://github.com/whatwareweb/WestonLite",
@@ -454,4 +462,3 @@
       "https://github.com/whatwareweb/WestonLite/blob/main/Screenshots/Screenshot1.png?raw=true"
     ]
   }
-]
