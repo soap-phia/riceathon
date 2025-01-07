@@ -486,5 +486,14 @@
     "distro": "nixos",
     "git": "https://github.com/mo8codes/gnome-rices.nix",
     "images": ["https://cloud-1ku38mm2c-hack-club-bot.vercel.app/0image.png"]
+  },
+  {
+    "name": "DJ_Laset - n16",
+    "distro": "nixos",
+    "git": "https://github.com/DJ-Laser/nixos",
+    "images": [
+      "https://cloud-mxs6qgq8r-hack-club-bot.vercel.app/0screenshot_from_2025-01-07_15-44-14.png",
+      "https://cloud-mxs6qgq8r-hack-club-bot.vercel.app/1screenshot_from_2025-01-07_15-42-31.png"
+    ]
   }
 ]
