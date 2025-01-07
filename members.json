@@ -413,11 +413,79 @@
     "images": ["https://cloud-8qx5ydzr3-hack-club-bot.vercel.app/0image.png"]
   },
   {
+    "name": "bojanradjenovic",
+    "distro": "debian",
+    "git": "https://github.com/bojanradjenovic/dotfiles",
+    "images": [
+      "https://cloud-rhok0jbjf-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-iug76tuhk-hack-club-bot.vercel.app/0image.png"
+    ]
+  },
+  {
+    "name": "genr234",
+    "distro": "macos",
+    "git": "https://github.com/genr234/dotfiles/tree/main",
+    "images": ["https://cloud-6lxdyetfe-hack-club-bot.vercel.app/0image.png"]
+  },
+  {
+    "name": "hash-ak",
+    "distro": "ubuntu",
+    "git": "https://github.com/Hash-AK/Hash-AK-First-Rice",
+    "images": [
+      "https://github.com/Hash-AK/Hash-AK-First-Rice/raw/main/2025-01-03-102442_hyprshot.png",
+      "https://github.com/Hash-AK/Hash-AK-First-Rice/raw/main/2025-01-03-103215_hyprshot.png"
+    ]
+  },
+  {
+    "name": "hex4",
+    "distro": "nixos",
+    "git": "https://github.com/Hex-4/nixos",
+    "images": [
+      "https://cloud-j61adq7yu-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-btrl1ldyf-hack-club-bot.vercel.app/0image.png"
+    ]
+  },
+  {
+    "name": "ilwan",
+    "distro": "arch",
+    "git": "https://github.com/IGaming73/ArchRice",
+    "images": [
+      "https://github.com/IGaming73/ArchRice/blob/main/screenshots/terminals.png"
+    ]
+  },
+  {
+    "name": "WhatWare WestonLite",
+    "distro": "fedora",
+    "git": "https://github.com/whatwareweb/WestonLite",
+    "images": [
+      "https://github.com/whatwareweb/WestonLite/blob/main/Screenshots/Screenshot0.png?raw=true",
+      "https://github.com/whatwareweb/WestonLite/blob/main/Screenshots/Screenshot1.png?raw=true"
+    ]
+  },
+  {
+    "name": "Iviv122",
+    "distro": "arch",
+    "git": "https://github.com/Iviv122/configArch",
+    "images":[
+      "https://cloud-md6v75k99-hack-club-bot.vercel.app/120250106_16h57m45s_grim.png",
+      "https://cloud-md6v75k99-hack-club-bot.vercel.app/020250106_16h58m00s_grim.png"
+    ]
+  },
+  {
+    "name": "kazuala",
+    "distro": "arch",
+    "git": "https://github.com/Kazuala/arch-linux-hyprland-rice",
+    "images": [
+      "https://github.com/Kazuala/arch-linux-hyprland-rice/blob/main/screenshots/2025-01-07-085101_hyprshot.png",
+      "https://github.com/Kazuala/arch-linux-hyprland-rice/blob/main/screenshots/2025-01-07-085132_hyprshot.png",
+      "https://github.com/Kazuala/arch-linux-hyprland-rice/blob/main/screenshots/2025-01-07-085146_hyprshot.png"
+    ]
+  },
+  {
     "name": "mo8codes",
     "distro": "nixos",
     "git": "https://github.com/mo8codes/gnome-rices.nix",
     "images": [
       "https://cloud-1ku38mm2c-hack-club-bot.vercel.app/0image.png"
     ]
-  },
-]
+  }
