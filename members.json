@@ -446,6 +446,23 @@
     ]
   },
   {
+    "name": "ilwan",
+    "distro": "arch",
+    "git": "https://github.com/IGaming73/ArchRice",
+    "images": [
+      "https://github.com/IGaming73/ArchRice/blob/main/screenshots/terminals.png"
+    ]
+  },
+  {
+    "name": "WhatWare WestonLite",
+    "distro": "fedora",
+    "git": "https://github.com/whatwareweb/WestonLite",
+    "images": [
+      "https://github.com/whatwareweb/WestonLite/blob/main/Screenshots/Screenshot0.png?raw=true",
+      "https://github.com/whatwareweb/WestonLite/blob/main/Screenshots/Screenshot1.png?raw=true"
+    ]
+  },
+  {
     "name": "Iviv122",
     "distro": "arch",
     "git": "https://github.com/Iviv122/configArch",
@@ -454,4 +471,3 @@
       "https://cloud-md6v75k99-hack-club-bot.vercel.app/020250106_16h58m00s_grim.png"
     ]
   }
-]
