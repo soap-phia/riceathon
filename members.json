@@ -476,9 +476,9 @@
     "distro": "arch",
     "git": "https://github.com/Kazuala/arch-linux-hyprland-rice",
     "images": [
-      "https://github.com/Kazuala/arch-linux-hyprland-rice/blob/main/screenshots/2025-01-07-085101_hyprshot.png",
-      "https://github.com/Kazuala/arch-linux-hyprland-rice/blob/main/screenshots/2025-01-07-085132_hyprshot.png",
-      "https://github.com/Kazuala/arch-linux-hyprland-rice/blob/main/screenshots/2025-01-07-085146_hyprshot.png"
+      "https://cloud-1aj5dugwd-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-1aj5dugwd-hack-club-bot.vercel.app/1image.png",
+      "https://cloud-1aj5dugwd-hack-club-bot.vercel.app/2image.png"
     ]
   },
   {
@@ -486,6 +486,16 @@
     "distro": "nixos",
     "git": "https://github.com/mo8codes/gnome-rices.nix",
     "images": ["https://cloud-1ku38mm2c-hack-club-bot.vercel.app/0image.png"]
+  },
+  {
+    "name": "WilmervH",
+    "distro": "arch",
+    "git": "https://github.com/WilmervH/hypr-dotfiles",
+    "images": [
+      "https://raw.githubusercontent.com/WilmervH/hypr-dotfiles/refs/heads/main/assets/1.png",
+      "https://raw.githubusercontent.com/WilmervH/hypr-dotfiles/refs/heads/main/assets/2.png",
+      "https://raw.githubusercontent.com/WilmervH/hypr-dotfiles/refs/heads/main/assets/3.png"
+    ]
   },
   {
     "name": "DJ_Laser - n16",
