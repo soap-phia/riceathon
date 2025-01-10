@@ -521,5 +521,10 @@
     "distro": "endaevour",
     "git": "https://github.com/Knaifu0030/catinux",
     "images": ["https://i.imgur.com/AL8G39q.png"]
-  }
+  },
+  {
+    "name": "luna",
+    "distro": "fedora",
+    "git": "https://github.com/ellipticobj/dotfiles",
+    "images": ["https://cloud-3gwgti4ga-hack-club-bot.vercel.app/0screenshot.png"]
 ]
