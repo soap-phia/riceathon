@@ -515,5 +515,11 @@
       "https://cloud-7zvvy6mu5-hack-club-bot.vercel.app/0image.png",
       "https://cloud-q3lz20ghz-hack-club-bot.vercel.app/0image.png"
     ]
+  },
+  {
+    "name": "Knaifu",
+    "distro": "endaevour",
+    "git": "https://github.com/Knaifu0030/catinux",
+    "images": ["https://i.imgur.com/AL8G39q.png"]
   }
 ]
