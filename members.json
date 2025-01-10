@@ -529,5 +529,13 @@
     "images": [
       "https://cloud-3gwgti4ga-hack-club-bot.vercel.app/0screenshot.png"
     ]
+  },
+  {
+    "name": "jai's rice",
+    "distro": "debian",
+    "git": "https://github.com/Jaisinh/rice",
+    "images": [
+      "https://cloud-mqc2ek8p6-hack-club-bot.vercel.app/0screenshot_from_2025-01-10_22-25-53.png"
+    ]
   }
 ]
