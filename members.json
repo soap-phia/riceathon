@@ -498,6 +498,12 @@
     ]
   },
   {
+    "name": "anne",
+    "distro": "mint",
+    "git": "https://github.com/arsoninstigator/rice",
+    "images": ["https://github.com/user-attachments/assets/2ebe7974-d5f7-4fe6-aeb7-0bb356680ba8"]
+  },
+  {
     "name": "DJ_Laser - n16",
     "distro": "nixos",
     "git": "https://github.com/DJ-Laser/nixos",
