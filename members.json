@@ -527,4 +527,5 @@
     "distro": "fedora",
     "git": "https://github.com/ellipticobj/dotfiles",
     "images": ["https://cloud-3gwgti4ga-hack-club-bot.vercel.app/0screenshot.png"]
+  }
 ]
