@@ -521,5 +521,13 @@
     "distro": "endaevour",
     "git": "https://github.com/Knaifu0030/catinux",
     "images": ["https://i.imgur.com/AL8G39q.png"]
+  },
+    {
+    "name": "jai's rice",
+    "distro": "debian",
+    "git": "https://github.com/Jaisinh/rice",
+    "images": [
+      "https://cloud-mqc2ek8p6-hack-club-bot.vercel.app/0screenshot_from_2025-01-10_22-25-53.png"
+    ]
   }
 ]
