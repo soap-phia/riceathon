@@ -607,8 +607,6 @@
     "name": "gusruben",
     "distro": "arch",
     "git": "https://github.com/gusruben/sushi-dotfiles",
-    "images": [
-      "https://i.imgur.com/XO4Qpcj.png"
-    ]
+    "images": ["https://i.imgur.com/XO4Qpcj.png"]
   }
 ]
