@@ -608,5 +608,16 @@
     "distro": "arch",
     "git": "https://github.com/gusruben/sushi-dotfiles",
     "images": ["https://i.imgur.com/XO4Qpcj.png"]
-  }
+  },   {
+    "name": "brody-nixos",
+    "distro": "nixos",
+    "images": [
+      "https://raw.githubusercontent.com/Glitch752/NixOSConfiguration/refs/heads/main/images/demo1.png",
+      "https://raw.githubusercontent.com/Glitch752/NixOSConfiguration/refs/heads/main/images/demo2.png",
+      "https://raw.githubusercontent.com/Glitch752/NixOSConfiguration/refs/heads/main/images/demo3.png",
+      "https://raw.githubusercontent.com/Glitch752/NixOSConfiguration/refs/heads/main/images/demo4.png",
+      "https://raw.githubusercontent.com/Glitch752/NixOSConfiguration/refs/heads/main/images/demo5.png"
+    ],
+    "git": "https://github.com/Glitch752/NixOSConfiguration"
+  },
 ]
