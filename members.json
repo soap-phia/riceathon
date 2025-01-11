@@ -580,6 +580,11 @@
     "images": ["https://cloud-fmlkf8yf6-hack-club-bot.vercel.app/0example.png"]
   },
   {
+    "name": "pmnlla-nixos",
+    "distro": "nixos",
+    "git": "https://github.com/pmnlla/riceathon",
+    "images": ["https://cloud-906ar2tca-hack-club-bot.vercel.app/01000004161.webp"]
+}, {
     "name": "ByteAtATime",
     "distro": "arch",
     "git": "https://github.com/ByteAtATime/dotfiles",
