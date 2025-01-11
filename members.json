@@ -559,6 +559,11 @@
     "images": ["https://cloud-lgc673ndr-hack-club-bot.vercel.app/0image.png"]
   },
   {
+    "name": "joshWM (not actually a rice)",
+    "distro": "anything with x11",
+    "git": "https://github.com/hotcocoaNcode/joshwm",
+    "images": ["https://cloud-r7ij49zc9-hack-club-bot.vercel.app/0screenshot_2024-11-26_at_12.35.19___am.png"]
+  }, {
     "name": "Tileryr",
     "distro": "arch",
     "git": "https://github.com/Tileryr/arch-rice-config",
