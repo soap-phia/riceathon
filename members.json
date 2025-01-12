@@ -360,6 +360,15 @@
     ]
   },
   {
+    "name": "Pegoku",
+    "distro": "arch",
+    "git": "https://github.com/Pegoku/dotfiles",
+    "images": [
+      "https://cloud-r9s07p01n-hack-club-bot.vercel.app/0image.png",
+      "https://cloud-r9s07p01n-hack-club-bot.vercel.app/1image.png"
+    ]
+  },
+  {
     "name": "nulladmin1",
     "distro": "nixos",
     "git": "https://github.com/nulladmin1/nixos-config",
