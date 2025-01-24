@@ -203,7 +203,7 @@
   {
     "name": "3XAY",
     "distro": "Kubuntu",
-    "git": "https://github.com/3XAY/tree/3xay/",
+    "git": "https://github.com/3XAY/riceathon/tree/3xay/dotfiles",
     "images": [
       "https://cloud-q4la5p0si-hack-club-bot.vercel.app/0image.png",
       "https://cloud-q4la5p0si-hack-club-bot.vercel.app/1image.png",
