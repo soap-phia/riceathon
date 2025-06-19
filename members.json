@@ -739,5 +739,15 @@
     ],
     "git": "https://codeberg.org/virtualfuzz/hyprdot",
     "version": 2
+  },
+    {
+    "name": "soap-phia",
+    "distro": "arch",
+    "images": [
+      "https://github.com/soap-phia/arch-rice/blob/main/one.png",
+      "https://github.com/soap-phia/arch-rice/blob/main/two.png"
+    ],
+    "git": "https://github.com/soap-phia/arch-rice/",
+    "version": 2
   }
 ]
