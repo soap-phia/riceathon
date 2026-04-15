@@ -25,7 +25,7 @@
     "name": "kierans-nix",
     "distro": "nixos",
     "images": [
-      "https://github.com/taciturnaxolotl/dots/raw/master/.github/images/cool-retro-term.webp"
+      "https://cdn.hackclub.com/019d9381-04b4-789b-8e8d-5a7131ec2b8e/rice_kierans.webp"
     ],
     "git": "https://github.com/taciturnaxolotl/dots",
     "version": 1
@@ -78,7 +78,7 @@
     "images": [
       "https://cloud-jpr1h0bhz-hack-club-bot.vercel.app/0image.png",
       "https://cloud-jpr1h0bhz-hack-club-bot.vercel.app/1image.png",
-      "https://cloud-jpr1h0bhz-hack-club-bot.vercel.app/2image.png"
+      "https://cdn.hackclub.com/019d9381-2163-7187-907e-41bf206a5ed2/rice_tuinboon3.png"
     ],
     "version": 1
   },
@@ -168,8 +168,8 @@
     "images": [
       "https://cloud-ez05y2vf3-hack-club-bot.vercel.app/0image.png",
       "https://cloud-ez05y2vf3-hack-club-bot.vercel.app/1image.png",
-      "https://cloud-ez05y2vf3-hack-club-bot.vercel.app/2image.png",
-      "https://cloud-ez05y2vf3-hack-club-bot.vercel.app/3image.png"
+      "https://cdn.hackclub.com/019d9381-2593-7b97-8224-b6bb31080812/rice_mei3.png",
+      "https://cdn.hackclub.com/019d9381-2a67-7ce6-b64c-e0e1ccaa9f56/rice_mei4.png"
     ],
     "version": 1
   },
@@ -236,7 +236,7 @@
     "images": [
       "https://cloud-94styr2fd-hack-club-bot.vercel.app/0image.png",
       "https://cloud-94styr2fd-hack-club-bot.vercel.app/1image.png",
-      "https://cloud-94styr2fd-hack-club-bot.vercel.app/2image.png"
+      "https://cdn.hackclub.com/019d9381-3050-7daa-a231-10c00839c324/rice_headblock3.png"
     ],
     "version": 1
   },
@@ -247,7 +247,7 @@
     "images": [
       "https://cloud-q4la5p0si-hack-club-bot.vercel.app/0image.png",
       "https://cloud-q4la5p0si-hack-club-bot.vercel.app/1image.png",
-      "https://cloud-q4la5p0si-hack-club-bot.vercel.app/2image.png",
+      "https://cdn.hackclub.com/019d9381-345b-7e32-bf96-4e4f461c9fe0/rice_3xay_vscode.png",
       "https://cloud-61b3wmj3h-hack-club-bot.vercel.app/0image.png"
     ],
     "version": 1
@@ -310,7 +310,7 @@
     "images": [
       "https://cloud-pv6qcythp-hack-club-bot.vercel.app/0image.png",
       "https://cloud-pv6qcythp-hack-club-bot.vercel.app/1image.png",
-      "https://cloud-pv6qcythp-hack-club-bot.vercel.app/2image.png"
+      "https://cdn.hackclub.com/019d9381-3841-77cd-b7e5-590249750a3b/rice_computingsquid3.png"
     ],
     "version": 1
   },
@@ -321,8 +321,8 @@
     "images": [
       "https://cloud-9jpla7zxu-hack-club-bot.vercel.app/0image.png",
       "https://cloud-9jpla7zxu-hack-club-bot.vercel.app/1image.png",
-      "https://cloud-9jpla7zxu-hack-club-bot.vercel.app/2image.png",
-      "https://cloud-9jpla7zxu-hack-club-bot.vercel.app/3image.png"
+      "https://cdn.hackclub.com/019d9381-67e4-7cd4-86a0-09808e9c202c/rice_shibam_qt2.png",
+      "https://cdn.hackclub.com/019d9381-6d71-7113-9927-f26c7be63827/rice_shibam_qt3.png"
     ],
     "version": 1
   },
@@ -347,8 +347,8 @@
     "images": [
       "https://cloud-kq0awumuw-hack-club-bot.vercel.app/0image.png",
       "https://cloud-kq0awumuw-hack-club-bot.vercel.app/1image.png",
-      "https://cloud-kq0awumuw-hack-club-bot.vercel.app/2image.png",
-      "https://cloud-kq0awumuw-hack-club-bot.vercel.app/3image.png"
+      "https://cdn.hackclub.com/019d9381-737c-7a52-a93b-0cec55153f8f/rice_cashmoney2.png",
+      "https://cdn.hackclub.com/019d9381-7b89-7ed5-bb47-019004576a73/rice_cashmoney3.png"
     ],
     "version": 1
   },
@@ -386,7 +386,7 @@
     "images": [
       "https://cloud-fgqhhaly0-hack-club-bot.vercel.app/0image.png",
       "https://cloud-fgqhhaly0-hack-club-bot.vercel.app/1image.png",
-      "https://cloud-fgqhhaly0-hack-club-bot.vercel.app/2image.png"
+      "https://cdn.hackclub.com/019d9381-803f-7be2-90af-fe7c59225cfa/rice_roxwize3.png"
     ],
     "version": 1
   },
@@ -414,7 +414,7 @@
     "images": [
       "https://cloud-5jfwfkd0f-hack-club-bot.vercel.app/0image.png",
       "https://cloud-5jfwfkd0f-hack-club-bot.vercel.app/1image.png",
-      "https://cloud-5jfwfkd0f-hack-club-bot.vercel.app/2image.png"
+      "https://cdn.hackclub.com/019d9381-86be-78a3-89e5-d9fcf430daa2/rice_hibernathan3.png"
     ],
     "version": 1
   },
@@ -520,7 +520,7 @@
     "distro": "arch",
     "git": "https://github.com/ilwan07/ArchRice",
     "images": [
-      "https://github.com/ilwan07/ArchRice/blob/main/screenshots/terminals.png"
+      "https://cdn.hackclub.com/019d932b-14e1-7d9e-b804-cbe3ee92fd07/ilwan_test.png"
     ],
     "version": 1
   },
@@ -766,10 +766,9 @@
     "name": "soap-phia's rice",
     "distro": "arch",
     "images": [
-      "https://github.com/soap-phia/arch-rice/blob/main/one.png",
-      "https://github.com/soap-phia/arch-rice/blob/main/two.png"
+      "https://cdn.hackclub.com/019d9381-0b6d-75f1-a5e0-ff24877a6639/rice_soap-phia.png"
     ],
-    "git": "https://github.com/soap-phia/arch-rice/",
+    "git": "https://github.com/soap-phia/hyprland-riceathon-v3",
     "version": 2
   },
   {
@@ -846,8 +845,8 @@
     "distro": "arch",
     "git": "https://github.com/yoavmlotok/rice",
     "images": [
-      "https://github.com/yoavmlotok/rice/blob/main/previews/usual.png",
-      "https://github.com/yoavmlotok/rice/blob/main/previews/menu.png"
+      "https://cdn.hackclub.com/019d9355-eb2b-73c8-8d48-078cfb73d91a/rice_yoav1.png",
+      "https://cdn.hackclub.com/019d9355-f07d-7d33-819f-dd33234b4388/rice_yoav2.png"
     ],
     "version": 2
   },
@@ -856,8 +855,8 @@
     "distro": "Arch",
     "git": "https://github.com/ShibamRoy9826/niri-dotfiles",
     "images": [
-      "https://github.com/ShibamRoy9826/niri-dotfiles/blob/main/screenshots/1.png",
-      "https://github.com/ShibamRoy9826/niri-dotfiles/blob/main/screenshots/2.png"
+      "https://cdn.hackclub.com/019d9355-f535-711b-81af-d223dd5cfb98/rice_shibam1.png",
+      "https://cdn.hackclub.com/019d9355-f9b4-7810-9064-299c4ee3f670/rice_shibam2.png"
     ],
     "version": 2
   },
@@ -876,8 +875,8 @@
     "distro": "Arch",
     "git": "https://github.com/pbhak/dotfiles",
     "images": [
-      "https://github.com/pbhak/dotfiles/blob/master/screenshots/desktop.png",
-      "https://github.com/pbhak/dotfiles/blob/master/screenshots/screenshot1.png"
+      "https://cdn.hackclub.com/019d9355-fe1c-736a-a720-411547498442/rice_pbhak1.png",
+      "https://cdn.hackclub.com/019d9356-0304-7cf5-a281-600bd339274d/rice_pbhak2.png"
     ],
     "version": 2
   },
@@ -886,9 +885,9 @@
     "distro": "Arch",
     "git": "https://github.com/x-9917638/dotfiles",
     "images": [
-      "https://raw.githubusercontent.com/x-9917638/dotfiles/refs/heads/main/.dotfiles/Assets/Screenshot1.png",
-      "https://raw.githubusercontent.com/x-9917638/dotfiles/refs/heads/main/.dotfiles/Assets/Screenshot2.png",
-      "https://raw.githubusercontent.com/x-9917638/dotfiles/refs/heads/main/.dotfiles/Assets/Screenshot3.png"
+      "https://cdn.hackclub.com/019d9381-105e-7cf9-bd35-3233f6d312dc/rice_some1_s1.png",
+      "https://cdn.hackclub.com/019d9381-160e-719b-9c1c-7e558a98f5af/rice_some1_s2.png",
+      "https://cdn.hackclub.com/019d9381-1c7f-7f84-b25a-ac6ad3fa81aa/rice_some1_s3.png"
     ],
     "version": 2
   },
