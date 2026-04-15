@@ -762,16 +762,7 @@
     "git": "https://github.com/thisiscid/dotfiles-riceathon",
     "version": 2
   },
-  {
-    "name": "soap-phia's rice",
-    "distro": "arch",
-    "images": [
-      "https://cdn.hackclub.com/019d9381-0b6d-75f1-a5e0-ff24877a6639/rice_soap-phia.png"
-    ],
-    "git": "https://github.com/soap-phia/hyprland-riceathon-v3",
-    "version": 2
-  },
-  {
+{
     "name": "Dan (Z)'s Rice",
     "distro": "ubuntu",
     "images": [
