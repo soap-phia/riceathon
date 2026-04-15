@@ -149,7 +149,7 @@
 
         async function main() {
             const gallery = await fetch(
-                "https://raw.githubusercontent.com/hackclub/riceathon/refs/heads/main/members.json",
+                "/members.json",
             ).then((r) => r.json());
             if (
                 isNaN(window.location.hash.slice(1)) ||
