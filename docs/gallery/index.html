@@ -1,753 +1,487 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Riceathon Gallery</title>
 
     <meta property="og:title" content="Riceathon Gallery" />
-    <meta name="description" content="Gallery of riced desktops from the Hack Club Riceathon" />
-    <meta property="og:description" content="Gallery of riced desktops from the Hack Club Riceathon" />
+    <meta
+      name="description"
+      content="Gallery of riced desktops from the Hack Club Riceathon"
+    />
+    <meta
+      property="og:description"
+      content="Gallery of riced desktops from the Hack Club Riceathon"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root {
-            --bg: #0a0a0f;
-            --surface: #14141f;
-            --bar: #11111b;
-            --border: #1e1e2e;
-            --text: #cdd6f4;
-            --text-dim: #585b70;
-            --accent: #94e2d5;
-            --accent-dim: #94e2d518;
-            --overlay: #181825;
-            --mauve: #cba6f7;
-            --pink: #f38ba8;
-            --radius: 10px;
-            --mono: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
-        }
-
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: var(--mono);
-            line-height: 1.5;
-            min-height: 100vh;
-        }
-
-        a { color: var(--accent); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-        /* --- Powerline bar --- */
-        .bar {
-            display: flex;
-            align-items: stretch;
-            height: 32px;
-            background: var(--bg);
-            font-size: 12px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            overflow: hidden;
-        }
-
-        .pl-seg {
-            display: flex;
-            align-items: center;
-            padding: 0 12px;
-            white-space: nowrap;
-            position: relative;
-            font-weight: 500;
-        }
-
-        .pl-seg::after {
-            content: "";
-            position: absolute;
-            right: -16px;
-            top: 0;
-            width: 0; height: 0;
-            border-top: 16px solid transparent;
-            border-bottom: 16px solid transparent;
-            border-left: 16px solid var(--_bg);
-            z-index: 1;
-        }
-
-        .pl-seg a { color: inherit; text-decoration: none; }
-        .pl-seg a:hover { text-decoration: underline; }
-
-        .pl-mode {
-            --_bg: #cba6f7;
-            background: var(--_bg);
-            color: #11111b;
-            font-weight: 700;
-            padding: 0 14px;
-            letter-spacing: 0.5px;
-        }
-
-        .pl-path {
-            --_bg: #45475a;
-            background: var(--_bg);
-            color: #cdd6f4;
-            padding-left: 24px;
-        }
-
-        .pl-path .sep { color: #6c7086; padding: 0 5px; }
-
-        .pl-file {
-            --_bg: #313244;
-            background: var(--_bg);
-            color: #a6adc8;
-            padding-left: 24px;
-        }
-
-        .bar-spacer { flex: 1; background: var(--bg); }
-
-        .pl-hints {
-            --_bg: #313244;
-            background: var(--_bg);
-            color: #a6adc8;
-            padding-left: 24px;
-            padding-right: 20px;
-            font-size: 11px;
-            white-space: nowrap;
-        }
-
-        .pl-hints::before, .pl-search::before {
-            content: "";
-            position: absolute;
-            left: -16px;
-            top: 0;
-            width: 0; height: 0;
-            border-top: 16px solid transparent;
-            border-bottom: 16px solid transparent;
-            border-right: 16px solid var(--_bg);
-            z-index: 1;
-        }
-
-        .pl-hints::after { display: none; }
-
-        .pl-search {
-            --_bg: #f38ba8;
-            background: var(--_bg);
-            color: #11111b;
-            font-weight: 600;
-            cursor: pointer;
-            margin-left: 16px;
-        }
-
-        .pl-search::after { display: none; }
-        .pl-search:hover { filter: brightness(1.1); }
-
-        .pl-search kbd {
-            font-family: var(--mono);
-            font-size: 10px;
-            background: rgba(0,0,0,0.2);
-            border-radius: 3px;
-            padding: 1px 5px;
-            margin-left: 6px;
-        }
-
-        /* --- Command palette --- */
-        .palette-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.6);
-            z-index: 300;
-            backdrop-filter: blur(4px);
-        }
-
-        .palette-overlay.open { display: flex; justify-content: center; padding-top: 20vh; }
-
-        .palette {
-            width: 520px;
-            max-height: 400px;
-            background: var(--overlay);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 16px 48px rgba(0,0,0,0.5);
-        }
-
-        .palette input {
-            width: 100%;
-            padding: 14px 16px;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid var(--border);
-            color: var(--text);
-            font-family: var(--mono);
-            font-size: 14px;
-            outline: none;
-        }
-
-        .palette input::placeholder { color: var(--text-dim); }
-        .palette-results { overflow-y: auto; flex: 1; }
-
-        .palette-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 16px;
-            cursor: pointer;
-            border-bottom: 1px solid var(--border);
-            font-size: 13px;
-        }
-
-        .palette-item:last-child { border-bottom: none; }
-        .palette-item:hover, .palette-item.selected { background: var(--accent-dim); }
-        .palette-item .pi-name { flex: 1; }
-        .palette-item .pi-distro { color: var(--text-dim); font-size: 11px; }
-        .palette-item .pi-type {
-            font-size: 10px; color: var(--text-dim);
-            border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px;
-        }
-
-        .palette-empty {
-            padding: 24px 16px;
-            text-align: center;
-            color: var(--text-dim);
-            font-size: 13px;
-        }
-
-        /* --- Grid --- */
-        #gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 8px;
-            padding: 8px;
-        }
-
-        .rice-card {
-            position: relative;
-            aspect-ratio: 16/10;
-            overflow: hidden;
-            background: var(--surface);
-            cursor: pointer;
-            border-radius: 12px;
-            border: 2px solid transparent;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .rice-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: transform 0.3s ease, filter 0.3s ease;
-        }
-
-        .rice-card:hover { border-color: #45475a; }
-        .rice-card:hover img { transform: scale(1.03); filter: brightness(1.08); }
-
-        .rice-card .label {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            padding: 40px 14px 10px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.9));
-            border-radius: 0 0 10px 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-
-        .rice-card:hover .label, .rice-card.focused .label { opacity: 1; }
-
-        .rice-card.focused {
-            border-color: var(--mauve);
-            box-shadow:
-                0 0 0 1px var(--mauve),
-                0 0 20px rgba(203, 166, 247, 0.25),
-                0 0 40px rgba(203, 166, 247, 0.1);
-        }
-
-        .rice-card.focused img { filter: brightness(1.12); }
-        .rice-card .label .name { font-size: 13px; font-weight: 600; }
-        .rice-card .label .distro { font-size: 11px; color: var(--mauve); opacity: 0.9; }
-
-        .rice-card .img-counter {
-            position: absolute;
-            top: 8px; right: 8px;
-            font-size: 10px;
-            background: rgba(0,0,0,0.7);
-            color: var(--text-dim);
-            padding: 2px 7px;
-            border-radius: 4px;
-            opacity: 0;
-            transition: opacity 0.2s;
-        }
-
-        .rice-card.focused .img-counter { opacity: 1; }
-
-        .no-results {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 80px 24px;
-            color: var(--text-dim);
-            font-size: 13px;
-        }
-
-        /* --- Modal --- */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: 200;
-            backdrop-filter: blur(8px);
-            overflow-y: auto;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        .modal-overlay.open { display: flex; }
-
-        .modal {
-            width: 100%;
-            max-width: 960px;
-            margin: 40px 24px;
-            animation: modalIn 0.15s ease;
-        }
-
-        @keyframes modalIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .modal-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 16px;
-        }
-
-        .modal-header h1 { font-size: 22px; font-weight: 600; }
-        .modal-header .distro-badge { font-size: 12px; color: var(--text-dim); }
-
-        .modal-header .dotfiles-link {
-            margin-left: auto;
-            font-size: 13px;
-            padding: 6px 14px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            transition: all 0.15s;
-        }
-
-        .modal-header .dotfiles-link:hover {
-            border-color: var(--accent);
-            background: var(--accent-dim);
-            text-decoration: none;
-        }
-
-        .modal .carousel-wrap {
-            position: relative;
-            border-radius: var(--radius);
-            overflow: hidden;
-            background: var(--surface);
-            border: 1px solid var(--border);
-        }
-
-        .modal .carousel {
-            display: flex;
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .modal .carousel img { width: 100%; height: auto; flex: 0 0 100%; }
-
-        .modal .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: var(--bar);
-            color: var(--text);
-            border: 1px solid var(--border);
-            width: 34px; height: 34px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--mono);
-            transition: all 0.15s;
-        }
-
-        .modal .carousel-btn:hover { border-color: var(--accent); }
-        .modal .carousel-btn.prev { left: 12px; }
-        .modal .carousel-btn.next { right: 12px; }
-
-        .modal .slide-count {
-            text-align: center;
-            padding: 10px;
-            font-size: 12px;
-            color: var(--text-dim);
-        }
-
-        .modal-nav {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 16px;
-        }
-
-        .modal-nav button {
-            font-family: var(--mono);
-            font-size: 12px;
-            color: var(--text-dim);
-            padding: 6px 12px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            background: transparent;
-            cursor: pointer;
-            transition: all 0.15s;
-        }
-
-        .modal-nav button:hover { color: var(--text); border-color: var(--text-dim); }
-        .modal-nav button:disabled { opacity: 0.3; cursor: default; }
-
-        @media (max-width: 640px) {
-            #gallery { grid-template-columns: 1fr; }
-            .modal { margin: 16px; }
-            .modal-header { flex-wrap: wrap; gap: 10px; }
-            .modal-header .dotfiles-link { margin-left: 0; }
-            .palette { width: calc(100% - 32px); }
-            .rice-card .label { opacity: 1; }
-        }
-    </style>
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://www.nerdfonts.com/assets/css/webfont.css"
+    />
+  </head>
+  <body>
     <div class="bar">
-        <div class="pl-seg pl-mode">RICE</div>
-        <div class="pl-seg pl-path">
-            <a href="/">~</a><span class="sep">/</span><a href="/">riceathon</a><span class="sep">/</span>gallery
-        </div>
-        <div class="pl-seg pl-file" id="pl-file" style="display:none"></div>
-        <div class="bar-spacer"></div>
-        <div class="pl-seg pl-hints" id="keyhints">hjkl:move enter:open</div>
-        <div class="pl-seg pl-search" id="search-trigger">/ search<kbd>&#8984;K</kbd></div>
+      <div class="pl-seg pl-mode">
+        <i class="nf nf-md-arch"></i>
+        <p style="margin-left: 4px">Heidi</p>
+      </div>
+      <div class="pl-seg pl-path">
+        <a href="/">~</a><span class="sep">/</span><a href="/">riceathon</a
+        ><span class="sep">/</span>gallery
+      </div>
+      <div class="pl-seg pl-file" id="pl-file" style="display: none"></div>
+      <div class="bar-spacer"></div>
+      <div class="pl-seg pl-hints" id="keyhints">
+        <i class="nf nf-md-alpha_h"></i><i class="nf nf-md-alpha_j"></i>
+        <i class="nf nf-md-alpha_k"></i> <i class="nf nf-md-alpha_l"></i>:move
+        ENTER:open
+      </div>
+      <div class="pl-seg pl-hints-trigger" id="hints-trigger">
+        <i class="nf nf-fa-question"></i>
+      </div>
+      <div class="pl-seg pl-search" id="search-trigger">
+        <i class="nf nf-seti-search"></i>
+        <p style="margin-left: 4px">search</p>
+        <kbd>
+          <i class="nf nf-md-apple_keyboard_command"></i
+          ><i class="nf nf-md-alpha_k"></i> or <i class="nf nf-fae-slash"></i>
+        </kbd>
+      </div>
     </div>
 
     <div class="palette-overlay" id="palette-overlay">
-        <div class="palette">
-            <input type="text" id="palette-input" placeholder="search rices, distros..." />
-            <div class="palette-results" id="palette-results"></div>
-        </div>
+      <div class="palette">
+        <input
+          type="text"
+          id="palette-input"
+          placeholder="search rices, distros..."
+        />
+        <div class="palette-results" id="palette-results"></div>
+      </div>
     </div>
 
     <div id="gallery"></div>
 
     <div class="modal-overlay" id="modal-overlay">
-        <div class="modal" id="modal"></div>
+      <div class="modal" id="modal"></div>
     </div>
 
     <script>
-        let entries = [];
-        let focusIdx = -1;
-        let cardImgIdx = {};
-        let modalIdx = -1;
-        let modalImgIdx = 0;
-        let modalImgCount = 0;
+      let entries = [];
+      let focusIdx = -1;
+      let cardImgIdx = {};
+      let modalIdx = -1;
+      let modalImgIdx = 0;
+      let modalImgCount = 0;
 
-        async function main() {
-            entries = await fetch("/members.json").then(r => r.json());
-            buildGrid();
-            setupPalette();
-            setupKeys();
+      async function main() {
+        entries = await fetch("/members.json").then((r) => r.json());
+        buildGrid();
+        setupPalette();
+        setupKeys();
+      }
+
+      // --- Grid ---
+      function buildGrid() {
+        const g = document.getElementById("gallery");
+        entries.forEach((e, i) => {
+          const card = document.createElement("div");
+          card.className = "rice-card";
+          card.dataset.i = i;
+          card.dataset.distro = (e.distro || "").toLowerCase();
+          card.onclick = () => openModal(i);
+
+          const img = document.createElement("img");
+          img.loading = "lazy";
+          img.src = e.images[0];
+          img.alt = e.name;
+          card.appendChild(img);
+
+          if (e.images.length > 1) {
+            const c = document.createElement("div");
+            c.className = "img-counter";
+            c.textContent = "1/" + e.images.length;
+            card.appendChild(c);
+          }
+
+          const label = document.createElement("div");
+          label.className = "label";
+          label.innerHTML = '<span class="name"></span>';
+          label.querySelector(".name").textContent = e.name;
+          if (e.distro) {
+            const d = document.createElement("span");
+            d.className = "distro";
+            d.textContent = e.distro;
+            label.appendChild(d);
+          }
+          card.appendChild(label);
+          g.appendChild(card);
+        });
+      }
+
+      function cycleCardImg(dir) {
+        if (focusIdx < 0) return;
+        const card = getVisibleCards()[focusIdx];
+        if (!card) return;
+        const i = parseInt(card.dataset.i);
+        const e = entries[i];
+        if (e.images.length < 2) return;
+        const cur = cardImgIdx[i] || 0;
+        const next = (cur + dir + e.images.length) % e.images.length;
+        cardImgIdx[i] = next;
+        card.querySelector("img").src = e.images[next];
+        const c = card.querySelector(".img-counter");
+        if (c) c.textContent = next + 1 + "/" + e.images.length;
+      }
+
+      function getVisibleCards() {
+        return [...document.querySelectorAll(".rice-card")].filter(
+          (c) => c.style.display !== "none",
+        );
+      }
+
+      function focus(idx) {
+        const cards = getVisibleCards();
+        if (!cards.length) return;
+        idx = Math.max(0, Math.min(idx, cards.length - 1));
+        cards.forEach((c) => c.classList.remove("focused"));
+        focusIdx = idx;
+        cards[idx].classList.add("focused");
+        cards[idx].scrollIntoView({ block: "nearest" });
+      }
+
+      // --- Modal ---
+      function openModal(i) {
+        const e = entries[i];
+        if (!e) return;
+        modalIdx = i;
+        modalImgIdx = 0;
+        modalImgCount = e.images.length;
+
+        document.getElementById("pl-file").textContent = e.name;
+        document.getElementById("pl-file").style.display = "";
+
+        const m = document.getElementById("modal");
+        m.innerHTML = "";
+
+        // header
+        const hdr = document.createElement("div");
+        hdr.className = "modal-header";
+        const h1 = document.createElement("h1");
+        h1.textContent = e.name;
+        hdr.appendChild(h1);
+        if (e.distro) {
+          const b = document.createElement("span");
+          b.className = "distro-badge";
+          b.textContent = e.distro;
+          hdr.appendChild(b);
+        }
+        if (e.git) {
+          const a = document.createElement("a");
+          a.className = "dotfiles-link";
+          a.href = e.git;
+          a.target = "_blank";
+          a.innerHTML = '<i class="nf nf-fa-github_alt"></i> dotfiles';
+          hdr.appendChild(a);
+        }
+        m.appendChild(hdr);
+
+        // carousel
+        const wrap = document.createElement("div");
+        wrap.className = "carousel-wrap";
+        const track = document.createElement("div");
+        track.className = "carousel";
+        track.id = "modal-track";
+        e.images.forEach((src) => {
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = e.name;
+          track.appendChild(img);
+        });
+        wrap.appendChild(track);
+
+        if (e.images.length > 1) {
+          const prev = document.createElement("button");
+          prev.className = "carousel-btn prev";
+          prev.textContent = "\u2039";
+          prev.onclick = () => modalSlide(-1);
+          wrap.appendChild(prev);
+          const next = document.createElement("button");
+          next.className = "carousel-btn next";
+          next.textContent = "\u203a";
+          next.onclick = () => modalSlide(1);
+          wrap.appendChild(next);
+        }
+        m.appendChild(wrap);
+
+        if (e.images.length > 1) {
+          const ct = document.createElement("div");
+          ct.className = "slide-count";
+          ct.id = "modal-count";
+          ct.textContent = "1/" + e.images.length;
+          m.appendChild(ct);
         }
 
-        // --- Grid ---
-        function buildGrid() {
-            const g = document.getElementById("gallery");
-            entries.forEach((e, i) => {
-                const card = document.createElement("div");
-                card.className = "rice-card";
-                card.dataset.i = i;
-                card.dataset.distro = (e.distro || "").toLowerCase();
-                card.onclick = () => openModal(i);
+        const nav = document.createElement("div");
+        nav.className = "modal-nav";
 
-                const img = document.createElement("img");
-                img.loading = "lazy";
-                img.src = e.images[0];
-                img.alt = e.name;
-                card.appendChild(img);
+        const pb = document.createElement("button");
+        if (i > 0) {
+          pb.textContent = "\u2190 " + entries[i - 1].name + " (h)";
+          pb.onclick = () => openModal(i - 1);
+        } else {
+          pb.textContent = "\u2190";
+          pb.disabled = true;
+        }
+        nav.appendChild(pb);
 
-                if (e.images.length > 1) {
-                    const c = document.createElement("div");
-                    c.className = "img-counter";
-                    c.textContent = "1/" + e.images.length;
-                    card.appendChild(c);
-                }
+        const nb = document.createElement("button");
+        if (i < entries.length - 1) {
+          nb.textContent = entries[i + 1].name + " (l) \u2192";
+          nb.onclick = () => openModal(i + 1);
+        } else {
+          nb.textContent = "\u2192";
+          nb.disabled = true;
+        }
+        nav.appendChild(nb);
 
-                const label = document.createElement("div");
-                label.className = "label";
-                label.innerHTML = '<span class="name"></span>';
-                label.querySelector(".name").textContent = e.name;
-                if (e.distro) {
-                    const d = document.createElement("span");
-                    d.className = "distro";
-                    d.textContent = e.distro;
-                    label.appendChild(d);
-                }
-                card.appendChild(label);
-                g.appendChild(card);
-            });
+        const ov = document.getElementById("modal-overlay");
+        ov.querySelector(".modal-nav")?.remove();
+        ov.appendChild(nav);
+
+        ov.classList.add("open");
+      }
+
+      function modalSlide(dir) {
+        modalImgIdx = (modalImgIdx + dir + modalImgCount) % modalImgCount;
+        document.getElementById("modal-track").style.transform =
+          "translateX(" + -modalImgIdx * 100 + "%)";
+        const ct = document.getElementById("modal-count");
+        if (ct) ct.textContent = modalImgIdx + 1 + "/" + modalImgCount;
+      }
+
+      function closeModal() {
+        const ov = document.getElementById("modal-overlay");
+        ov.classList.add("closing");
+        setTimeout(() => {
+          modalIdx = -1;
+          ov.classList.remove("open", "closing");
+          document.getElementById("pl-file").style.display = "none";
+          document.getElementById("keyhints").textContent =
+            "hjkl:move enter:open";
+        }, 300);
+      }
+
+      // --- Palette ---
+      function setupPalette() {
+        const ov = document.getElementById("palette-overlay");
+        const inp = document.getElementById("palette-input");
+        const res = document.getElementById("palette-results");
+        const trig = document.getElementById("search-trigger");
+
+        function open() {
+          ov.classList.add("open");
+          inp.value = "";
+          inp.focus();
+          render("");
+        }
+        function close() {
+          ov.classList.remove("open");
+          inp.blur();
         }
 
-        function cycleCardImg(dir) {
-            if (focusIdx < 0) return;
-            const card = getVisibleCards()[focusIdx];
-            if (!card) return;
-            const i = parseInt(card.dataset.i);
-            const e = entries[i];
-            if (e.images.length < 2) return;
-            const cur = cardImgIdx[i] || 0;
-            const next = (cur + dir + e.images.length) % e.images.length;
-            cardImgIdx[i] = next;
-            card.querySelector("img").src = e.images[next];
-            const c = card.querySelector(".img-counter");
-            if (c) c.textContent = (next + 1) + "/" + e.images.length;
-        }
+        trig.onclick = open;
+        ov.onclick = (e) => {
+          if (e.target === ov) close();
+        };
 
-        function getVisibleCards() {
-            return [...document.querySelectorAll(".rice-card")].filter(c => c.style.display !== "none");
-        }
+        document.addEventListener("keydown", (e) => {
+          if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+            e.preventDefault();
+            ov.classList.contains("open") ? close() : open();
+          }
+          if (e.key === "Escape" && ov.classList.contains("open")) {
+            close();
+            e.stopImmediatePropagation();
+          }
+        });
 
-        function focus(idx) {
-            const cards = getVisibleCards();
-            if (!cards.length) return;
-            idx = Math.max(0, Math.min(idx, cards.length - 1));
-            cards.forEach(c => c.classList.remove("focused"));
-            focusIdx = idx;
-            cards[idx].classList.add("focused");
-            cards[idx].scrollIntoView({ block: "nearest" });
-        }
+        inp.addEventListener("input", () => render(inp.value));
 
-        // --- Modal ---
-        function openModal(i) {
-            const e = entries[i];
-            if (!e) return;
-            modalIdx = i;
-            modalImgIdx = 0;
-            modalImgCount = e.images.length;
+        let sel = -1;
+        inp.addEventListener("keydown", (e) => {
+          const items = res.querySelectorAll(".palette-item");
+          if (e.key === "ArrowDown") {
+            e.preventDefault();
+            sel = Math.min(sel + 1, items.length - 1);
+            items.forEach((el, i) =>
+              el.classList.toggle("selected", i === sel),
+            );
+            items[sel]?.scrollIntoView({ block: "nearest" });
+          } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            sel = Math.max(sel - 1, 0);
+            items.forEach((el, i) =>
+              el.classList.toggle("selected", i === sel),
+            );
+            items[sel]?.scrollIntoView({ block: "nearest" });
+          } else if (e.key === "Enter" && items[sel]) {
+            items[sel].click();
+          }
+        });
 
-            document.getElementById("pl-file").textContent = e.name;
-            document.getElementById("pl-file").style.display = "";
-            document.getElementById("keyhints").textContent = "h/l:prev/next j/k:images q:close";
-
-            const m = document.getElementById("modal");
-            m.innerHTML = "";
-
-            // header
-            const hdr = document.createElement("div");
-            hdr.className = "modal-header";
-            const h1 = document.createElement("h1");
-            h1.textContent = e.name;
-            hdr.appendChild(h1);
-            if (e.distro) {
-                const b = document.createElement("span");
-                b.className = "distro-badge";
-                b.textContent = e.distro;
-                hdr.appendChild(b);
-            }
-            if (e.git) {
-                const a = document.createElement("a");
-                a.className = "dotfiles-link";
-                a.href = e.git;
-                a.target = "_blank";
-                a.textContent = "dotfiles \u2197";
-                hdr.appendChild(a);
-            }
-            m.appendChild(hdr);
-
-            // carousel
-            const wrap = document.createElement("div");
-            wrap.className = "carousel-wrap";
-            const track = document.createElement("div");
-            track.className = "carousel";
-            track.id = "modal-track";
-            e.images.forEach(src => {
-                const img = document.createElement("img");
-                img.src = src;
-                img.alt = e.name;
-                track.appendChild(img);
-            });
-            wrap.appendChild(track);
-
-            if (e.images.length > 1) {
-                const prev = document.createElement("button");
-                prev.className = "carousel-btn prev";
-                prev.textContent = "\u2039";
-                prev.onclick = () => modalSlide(-1);
-                wrap.appendChild(prev);
-                const next = document.createElement("button");
-                next.className = "carousel-btn next";
-                next.textContent = "\u203a";
-                next.onclick = () => modalSlide(1);
-                wrap.appendChild(next);
-            }
-            m.appendChild(wrap);
-
-            if (e.images.length > 1) {
-                const ct = document.createElement("div");
-                ct.className = "slide-count";
-                ct.id = "modal-count";
-                ct.textContent = "1/" + e.images.length;
-                m.appendChild(ct);
-            }
-
-            // prev/next rice
-            const nav = document.createElement("div");
-            nav.className = "modal-nav";
-            const pb = document.createElement("button");
-            if (i > 0) {
-                pb.textContent = "\u2190(h) " + entries[i - 1].name;
-                pb.onclick = () => openModal(i - 1);
-            } else { pb.textContent = "\u2190"; pb.disabled = true; }
-            nav.appendChild(pb);
-            const nb = document.createElement("button");
-            if (i < entries.length - 1) {
-                nb.textContent = entries[i + 1].name + " (l)\u2192";
-                nb.onclick = () => openModal(i + 1);
-            } else { nb.textContent = "\u2192"; nb.disabled = true; }
-            nav.appendChild(nb);
-            m.appendChild(nav);
-
-            document.getElementById("modal-overlay").classList.add("open");
-        }
-
-        function modalSlide(dir) {
-            modalImgIdx = (modalImgIdx + dir + modalImgCount) % modalImgCount;
-            document.getElementById("modal-track").style.transform = "translateX(" + (-modalImgIdx * 100) + "%)";
-            const ct = document.getElementById("modal-count");
-            if (ct) ct.textContent = (modalImgIdx + 1) + "/" + modalImgCount;
-        }
-
-        function closeModal() {
-            modalIdx = -1;
-            document.getElementById("modal-overlay").classList.remove("open");
-            document.getElementById("pl-file").style.display = "none";
-            document.getElementById("keyhints").textContent = "hjkl:move enter:open";
-        }
-
-        // --- Palette ---
-        function setupPalette() {
-            const ov = document.getElementById("palette-overlay");
-            const inp = document.getElementById("palette-input");
-            const res = document.getElementById("palette-results");
-            const trig = document.getElementById("search-trigger");
-
-            function open() { ov.classList.add("open"); inp.value = ""; inp.focus(); render(""); }
-            function close() { ov.classList.remove("open"); inp.blur(); }
-
-            trig.onclick = open;
-            ov.onclick = (e) => { if (e.target === ov) close(); };
-
-            document.addEventListener("keydown", (e) => {
-                if ((e.metaKey || e.ctrlKey) && e.key === "k") { e.preventDefault(); ov.classList.contains("open") ? close() : open(); }
-                if (e.key === "Escape" && ov.classList.contains("open")) { close(); e.stopImmediatePropagation(); }
-            });
-
-            inp.addEventListener("input", () => render(inp.value));
-
-            let sel = -1;
-            inp.addEventListener("keydown", (e) => {
-                const items = res.querySelectorAll(".palette-item");
-                if (e.key === "ArrowDown") { e.preventDefault(); sel = Math.min(sel + 1, items.length - 1); items.forEach((el, i) => el.classList.toggle("selected", i === sel)); items[sel]?.scrollIntoView({ block: "nearest" }); }
-                else if (e.key === "ArrowUp") { e.preventDefault(); sel = Math.max(sel - 1, 0); items.forEach((el, i) => el.classList.toggle("selected", i === sel)); items[sel]?.scrollIntoView({ block: "nearest" }); }
-                else if (e.key === "Enter" && items[sel]) { items[sel].click(); }
-            });
-
-            function render(q) {
-                res.innerHTML = "";
-                sel = -1;
-                q = q.toLowerCase().trim();
-                const distros = [...new Set(entries.map(e => (e.distro || "").toLowerCase()))].sort();
-                (q ? distros.filter(d => d.includes(q)) : distros).forEach(d => {
-                    const n = entries.filter(e => (e.distro || "").toLowerCase() === d).length;
-                    const el = document.createElement("div");
-                    el.className = "palette-item";
-                    el.innerHTML = '<span class="pi-name">' + d + '</span><span class="pi-distro">' + n + '</span><span class="pi-type">distro</span>';
-                    el.onclick = () => { close(); filterDistro(d); };
-                    res.appendChild(el);
-                });
-                (q ? entries.filter(e => e.name.toLowerCase().includes(q) || (e.distro || "").toLowerCase().includes(q)) : entries).slice(0, 20).forEach(e => {
-                    const el = document.createElement("div");
-                    el.className = "palette-item";
-                    el.innerHTML = '<span class="pi-name">' + e.name + '</span><span class="pi-distro">' + (e.distro || "") + '</span><span class="pi-type">rice</span>';
-                    el.onclick = () => { close(); openModal(entries.indexOf(e)); };
-                    res.appendChild(el);
-                });
-                if (!res.children.length) res.innerHTML = '<div class="palette-empty">no results</div>';
-            }
-        }
-
-        function filterDistro(d) {
-            if (modalIdx >= 0) closeModal();
-            document.querySelectorAll(".rice-card").forEach(c => { c.style.display = c.dataset.distro === d ? "" : "none"; });
-            document.getElementById("pl-file").textContent = d;
-            document.getElementById("pl-file").style.display = "";
-        }
-
-        // --- Keys ---
-        function setupKeys() {
-            document.getElementById("modal-overlay").onclick = (e) => {
-                if (e.target === document.getElementById("modal-overlay")) closeModal();
+        function render(q) {
+          res.innerHTML = "";
+          sel = -1;
+          q = q.toLowerCase().trim();
+          const distros = [
+            ...new Set(entries.map((e) => (e.distro || "").toLowerCase())),
+          ].sort();
+          (q ? distros.filter((d) => d.includes(q)) : distros).forEach((d) => {
+            const n = entries.filter(
+              (e) => (e.distro || "").toLowerCase() === d,
+            ).length;
+            const el = document.createElement("div");
+            el.className = "palette-item";
+            el.innerHTML =
+              '<span class="pi-name">' +
+              d +
+              '</span><span class="pi-distro">' +
+              n +
+              '</span><span class="pi-type">distro</span>';
+            el.onclick = () => {
+              close();
+              filterDistro(d);
             };
-
-            document.addEventListener("keydown", (e) => {
-                if (document.getElementById("palette-overlay").classList.contains("open")) return;
-                if (e.target.tagName === "INPUT") return;
-
-                if (e.key === "/") { e.preventDefault(); document.getElementById("search-trigger").click(); return; }
-
-                // modal captures everything when open
-                if (modalIdx >= 0) {
-                    switch (e.key) {
-                        case "h": if (modalIdx > 0) openModal(modalIdx - 1); break;
-                        case "l": if (modalIdx < entries.length - 1) openModal(modalIdx + 1); break;
-                        case "j": if (modalImgCount > 1) modalSlide(1); break;
-                        case "k": if (modalImgCount > 1) modalSlide(-1); break;
-                        case "q": case "Escape": closeModal(); break;
-                    }
-                    return;
-                }
-
-                // grid
-                var cols = (function() {
-                    var cards = getVisibleCards();
-                    if (cards.length < 2) return 1;
-                    var top = cards[0].getBoundingClientRect().top;
-                    var n = 1;
-                    for (var c = 1; c < cards.length; c++) {
-                        if (cards[c].getBoundingClientRect().top === top) n++;
-                        else break;
-                    }
-                    return n;
-                })();
-                switch (e.key) {
-                    case "h": focus(focusIdx - 1); break;
-                    case "l": focus(focusIdx + 1); break;
-                    case "j": focus(focusIdx + cols); break;
-                    case "k": focus(focusIdx - cols); break;
-                    case "Enter":
-                        if (focusIdx >= 0) {
-                            const c = getVisibleCards()[focusIdx];
-                            if (c) openModal(parseInt(c.dataset.i));
-                        }
-                        break;
-                }
+            res.appendChild(el);
+          });
+          (q
+            ? entries.filter(
+                (e) =>
+                  e.name.toLowerCase().includes(q) ||
+                  (e.distro || "").toLowerCase().includes(q),
+              )
+            : entries
+          )
+            .slice(0, 20)
+            .forEach((e) => {
+              const el = document.createElement("div");
+              el.className = "palette-item";
+              el.innerHTML =
+                '<span class="pi-name">' +
+                e.name +
+                '</span><span class="pi-distro">' +
+                (e.distro || "") +
+                '</span><span class="pi-type">rice</span>';
+              el.onclick = () => {
+                close();
+                openModal(entries.indexOf(e));
+              };
+              res.appendChild(el);
             });
+          if (!res.children.length)
+            res.innerHTML = '<div class="palette-empty">no results</div>';
         }
+      }
 
-        main();
+      function filterDistro(d) {
+        if (modalIdx >= 0) closeModal();
+        document.querySelectorAll(".rice-card").forEach((c) => {
+          c.style.display = c.dataset.distro === d ? "" : "none";
+        });
+        document.getElementById("pl-file").textContent = d;
+        document.getElementById("pl-file").style.display = "";
+      }
+
+      // --- Keys ---
+      function setupKeys() {
+        document.getElementById("modal-overlay").onclick = (e) => {
+          if (e.target === document.getElementById("modal-overlay"))
+            closeModal();
+        };
+
+        document.addEventListener("keydown", (e) => {
+          if (
+            document
+              .getElementById("palette-overlay")
+              .classList.contains("open")
+          )
+            return;
+          if (e.target.tagName === "INPUT") return;
+
+          if (e.key === "/") {
+            e.preventDefault();
+            document.getElementById("search-trigger").click();
+            return;
+          }
+
+          // modal captures everything when open
+          if (modalIdx >= 0) {
+            switch (e.key) {
+              case "h":
+                if (modalIdx > 0) openModal(modalIdx - 1);
+                break;
+              case "l":
+                if (modalIdx < entries.length - 1) openModal(modalIdx + 1);
+                break;
+              case "j":
+                if (modalImgCount > 1) modalSlide(1);
+                break;
+              case "k":
+                if (modalImgCount > 1) modalSlide(-1);
+                break;
+              case "q":
+              case "Escape":
+                closeModal();
+                break;
+            }
+            return;
+          }
+
+          // grid
+          var cols = (function () {
+            var cards = getVisibleCards();
+            if (cards.length < 2) return 1;
+            var top = cards[0].getBoundingClientRect().top;
+            var n = 1;
+            for (var c = 1; c < cards.length; c++) {
+              if (cards[c].getBoundingClientRect().top === top) n++;
+              else break;
+            }
+            return n;
+          })();
+          switch (e.key) {
+            case "h":
+              focus(focusIdx - 1);
+              break;
+            case "l":
+              focus(focusIdx + 1);
+              break;
+            case "j":
+              focus(focusIdx + cols);
+              break;
+            case "k":
+              focus(focusIdx - cols);
+              break;
+            case "Enter":
+              if (focusIdx >= 0) {
+                const c = getVisibleCards()[focusIdx];
+                if (c) openModal(parseInt(c.dataset.i));
+              }
+              break;
+          }
+        });
+      }
+
+      main();
     </script>
-</body>
+  </body>
 </html>
