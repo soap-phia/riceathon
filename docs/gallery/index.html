@@ -168,8 +168,6 @@
 
         document.getElementById("pl-file").textContent = e.name;
         document.getElementById("pl-file").style.display = "";
-        document.getElementById("keyhints").textContent =
-          "h/l:prev/next j/k:images q:close";
 
         const m = document.getElementById("modal");
         m.innerHTML = "";
@@ -191,7 +189,7 @@
           a.className = "dotfiles-link";
           a.href = e.git;
           a.target = "_blank";
-          a.textContent = "dotfiles \u2197";
+          a.innerHTML = '<i class="nf nf-fa-github_alt"></i> dotfiles';
           hdr.appendChild(a);
         }
         m.appendChild(hdr);
@@ -232,30 +230,34 @@
           m.appendChild(ct);
         }
 
-        // prev/next rice
         const nav = document.createElement("div");
         nav.className = "modal-nav";
+
         const pb = document.createElement("button");
         if (i > 0) {
-          pb.textContent = "\u2190(h) " + entries[i - 1].name;
+          pb.textContent = "\u2190 " + entries[i - 1].name + " (h)";
           pb.onclick = () => openModal(i - 1);
         } else {
           pb.textContent = "\u2190";
           pb.disabled = true;
         }
         nav.appendChild(pb);
+
         const nb = document.createElement("button");
         if (i < entries.length - 1) {
-          nb.textContent = entries[i + 1].name + " (l)\u2192";
+          nb.textContent = entries[i + 1].name + " (l) \u2192";
           nb.onclick = () => openModal(i + 1);
         } else {
           nb.textContent = "\u2192";
           nb.disabled = true;
         }
         nav.appendChild(nb);
-        m.appendChild(nav);
 
-        document.getElementById("modal-overlay").classList.add("open");
+        const ov = document.getElementById("modal-overlay");
+        ov.querySelector(".modal-nav")?.remove();
+        ov.appendChild(nav);
+
+        ov.classList.add("open");
       }
 
       function modalSlide(dir) {
@@ -267,11 +269,15 @@
       }
 
       function closeModal() {
-        modalIdx = -1;
-        document.getElementById("modal-overlay").classList.remove("open");
-        document.getElementById("pl-file").style.display = "none";
-        document.getElementById("keyhints").textContent =
-          "hjkl:move enter:open";
+        const ov = document.getElementById("modal-overlay");
+        ov.classList.add("closing");
+        setTimeout(() => {
+          modalIdx = -1;
+          ov.classList.remove("open", "closing");
+          document.getElementById("pl-file").style.display = "none";
+          document.getElementById("keyhints").textContent =
+            "hjkl:move enter:open";
+        }, 300);
       }
 
       // --- Palette ---

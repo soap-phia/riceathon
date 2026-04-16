@@ -26,6 +26,7 @@ body {
   font-family: var(--mono);
   line-height: 1.5;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 a {
@@ -311,8 +312,37 @@ a:hover {
   border-radius: 12px;
   border: 2px solid transparent;
   transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    border-color 0.3s cubic-bezier(0.05, 0.9, 0.1, 1),
+    box-shadow 0.3s cubic-bezier(0.05, 0.9, 0.1, 1),
+    transform 0.3s cubic-bezier(0.05, 0.9, 0.1, 1);
+  animation: hyprIn 0.6s cubic-bezier(0.05, 0.9, 0.1, 1.1) backwards;
+}
+
+.rice-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.rice-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.rice-card:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.rice-card:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.rice-card:nth-child(n + 5) {
+  animation-delay: 0.25s;
+}
+
+@keyframes hyprIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 .rice-card img {
@@ -327,6 +357,8 @@ a:hover {
 
 .rice-card:hover {
   border-color: #45475a;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 .rice-card:hover img {
   transform: scale(1.03);
@@ -410,27 +442,50 @@ a:hover {
   overflow-y: auto;
   justify-content: center;
   align-items: flex-start;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .modal-overlay.open {
   display: flex;
+  opacity: 1;
+}
+
+.modal-overlay.closing {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .modal {
   width: 100%;
   max-width: 960px;
-  margin: 40px 24px;
-  animation: modalIn 0.15s ease;
+  margin: 40px 24px 120px;
+  animation: modalIn 0.5s cubic-bezier(0.05, 0.9, 0.1, 1.1) forwards;
+}
+
+.modal-overlay.closing .modal {
+  animation: modalOut 0.3s cubic-bezier(0.3, 0, 0.8, 0.15) forwards;
 }
 
 @keyframes modalIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: scale(0.9) translateY(40px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes modalOut {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
   }
 }
 
@@ -453,15 +508,28 @@ a:hover {
 .modal-header .dotfiles-link {
   margin-left: auto;
   font-size: 13px;
-  padding: 6px 14px;
+  padding: 8px 16px;
+  background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  transition: all 0.15s;
+  border-radius: 8px;
+  color: var(--text);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s cubic-bezier(0.05, 0.9, 0.1, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header .dotfiles-link i {
+  font-size: 16px;
+  color: var(--mauve);
 }
 
 .modal-header .dotfiles-link:hover {
-  border-color: var(--accent);
+  border-color: var(--mauve);
   background: var(--accent-dim);
+  color: var(--mauve);
   text-decoration: none;
 }
 
@@ -521,30 +589,56 @@ a:hover {
 }
 
 .modal-nav {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
   display: flex;
   justify-content: space-between;
-  margin-top: 16px;
+  align-items: center;
+  z-index: 250;
+  pointer-events: none;
+  margin-top: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease 0.2s;
+}
+
+.modal-overlay.open .modal-nav {
+  opacity: 1;
+}
+
+.modal-overlay.closing .modal-nav {
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
 .modal-nav button {
+  pointer-events: auto;
   font-family: var(--mono);
-  font-size: 12px;
-  color: var(--text-dim);
+  font-size: 13px;
+  color: #11111b;
   padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--mauve);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  background: transparent;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all 0.2s cubic-bezier(0.05, 0.9, 0.1, 1);
+  font-weight: 700;
+  white-space: nowrap;
 }
 
-.modal-nav button:hover {
-  color: var(--text);
-  border-color: var(--text-dim);
+.modal-nav button:hover:not(:disabled) {
+  background: var(--pink);
 }
+
+.modal-nav button:active:not(:disabled) {
+  transform: translateY(0) scale(0.97);
+}
+
 .modal-nav button:disabled {
-  opacity: 0.3;
+  opacity: 0.2;
   cursor: default;
+  background: var(--text-dim);
 }
 
 @media (max-width: 640px) {
