@@ -42,7 +42,7 @@ a:hover {
   align-items: stretch;
   height: 32px;
   background: var(--bg);
-  font-size: 12px;
+  font-size: 13px;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -51,7 +51,7 @@ a:hover {
 .pl-seg {
   display: flex;
   align-items: center;
-  padding: 0 12px;
+  padding: 0 8px;
   white-space: nowrap;
   position: relative;
   font-weight: 500;
@@ -83,7 +83,7 @@ a:hover {
   background: var(--_bg);
   color: #11111b;
   font-weight: 700;
-  padding: 0 14px;
+  padding: 0 10px;
   letter-spacing: 0.5px;
 }
 
@@ -96,7 +96,7 @@ a:hover {
 
 .pl-path .sep {
   color: #6c7086;
-  padding: 0 5px;
+  padding: 0 3px;
 }
 
 .pl-file {
@@ -115,13 +115,28 @@ a:hover {
   --_bg: #313244;
   background: var(--_bg);
   color: #a6adc8;
-  padding-left: 24px;
-  padding-right: 20px;
+  padding-left: 12px;
+  padding-right: 24px;
   font-size: 11px;
   white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 0;
+}
+
+.pl-hints-trigger {
+  --_bg: #313244;
+  background: var(--_bg);
+  color: #a6adc8;
+  cursor: pointer;
+}
+
+.bar:has(.pl-hints-trigger:hover) .pl-hints {
+  opacity: 1;
 }
 
 .pl-hints::before,
+.pl-hints-trigger::before,
 .pl-search::before {
   content: "";
   position: absolute;
@@ -135,11 +150,7 @@ a:hover {
   z-index: 1;
 }
 
-.pl-search::before {
-  background: #313244;
-}
-
-.pl-hints::after {
+.pl-hints-trigger::after {
   display: none;
 }
 
@@ -150,6 +161,11 @@ a:hover {
   font-weight: 600;
   cursor: pointer;
   margin-left: 16px;
+}
+
+.pl-search::before {
+  border-right-color: #f38ba8;
+  background: #313244;
 }
 
 .pl-search::after {
@@ -165,12 +181,12 @@ a:hover {
   right: 0;
   margin-top: 8px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   background: var(--overlay);
   border: 1px solid var(--border);
   color: var(--text);
   border-radius: 6px;
-  padding: 4px 10px;
+  padding: 3px 8px;
   opacity: 0;
   pointer-events: none;
   transition:
@@ -180,7 +196,7 @@ a:hover {
   white-space: nowrap;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   z-index: 1000;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 .pl-search:hover kbd {
